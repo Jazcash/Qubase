@@ -1,0 +1,14 @@
+<div class="section wrapped padded-xs">
+    <h4>Pattern Library</h4>
+
+    {{#each patterns}}
+    	<section class="pattern">
+    		<h5 id="{{filename}}">{{filename}}<a href="#" title="View Source" class="show-source"><i class="fa fa-code"></i></a></h5>
+    		<div class="pattern__source wrapper">
+    			<pre class="prettyprint"><code>{{contents}}</code>
+    			</pre>
+    		</div>
+    		<div>{{{contents}}}</div>
+    	</section>
+    {{/each}}
+</div>
