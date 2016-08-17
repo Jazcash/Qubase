@@ -1,0 +1,51 @@
+// https://github.com/Jazcash/collist
+
+.collist{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	& > li{
+		box-sizing: border-box;
+		vertical-align: top;
+	}
+}
+
+.lteie9 .collist > li{
+	display: inline-block;
+	margin-right: -4px;
+}
+
+.collist{
+	@for $n from 1 through $maxCols{
+		$minWidth: 0;
+		$finalKey: null;
+		@each $key, $val in $breakpoints{
+			&.#{$key}-row-#{$n} > li{
+				@media (min-width: $minWidth) and (max-width: $val){
+					width: calc((100% / #{$n}) - (#{$gutter} * (#{$n - 1})) / #{$n});
+					&:not(:nth-child(#{$n}n + 1)){
+						margin-left: $gutter;
+					}
+					&:not(:nth-child(-n+#{$n})){
+						margin-top: $gutter;
+					}
+				}
+			}
+			$minWidth: $val;
+			$finalKey: $key;
+		}
+		&.#{$finalKey}-row-#{$n} > li{
+			@media (min-width: $minWidth){
+				width: calc((100% / #{$n}) - (#{$gutter} * (#{$n - 1})) / #{$n});
+				&:not(:nth-child(#{$n}n + 1)){
+					margin-left: $gutter;
+				}
+				&:not(:nth-child(-n+#{$n})){
+					margin-top: $gutter;
+				}
+			}
+		}
+	}
+}

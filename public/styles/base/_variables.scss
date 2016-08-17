@@ -1,9 +1,21 @@
+// general
 $site-wrapper-width: 900px;
-
 $spacer: 15px;
 
-$break-xs: 350px;
-$break-sm: 480px;
-$break-md: 768px;
-$break-lg: 1024px;
-$break-xl: 1920px;
+$breakpoints: (
+	"xs": 350px,
+	"sm": 480px,
+	"md": 768px,
+	"lg": 1024px,
+	"xl": 1920px
+);
+
+// collist
+$maxCols: 6; // roughly 1KB per col
+$gutter: $spacer;
+
+// colours
+$body-background: #eee;
+
+// fonts
+$primary-font: 'Open Sans', sans-serif;
