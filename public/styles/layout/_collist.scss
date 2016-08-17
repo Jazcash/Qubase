@@ -18,6 +18,9 @@
 }
 
 .collist{
+	&.gutter{
+
+	}
 	@for $n from 1 through $maxCols{
 		$minWidth: 0;
 		$finalKey: null;
@@ -48,4 +51,8 @@
 			}
 		}
 	}
+}
+
+.collist > li{
+	background: blue;
 }

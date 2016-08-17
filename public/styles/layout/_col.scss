@@ -1,0 +1,12 @@
+.row{
+	background: blue;
+}
+
+@for $i from 1 through 12{
+	.col-#{$i}{
+		display: inline-block;
+		width: ((100% / 12) * $i);
+		background: red;
+		margin-right: -4px;
+	}
+}
