@@ -21,16 +21,15 @@
 }
 
 @mixin font-size($min, $max){
-	font-size: $max;
+	font-size: $min;
 	$range: $max - $min;
 	$unit: $range / length($breakpoints);
 	$i: 0;
 	@each $key, $val in $breakpoints{
-
-
-		// @include above($bp){
-		// 	font-size: (($unit * $i) + $min);
-		// }
+		$i: $i + 1;
+		@include above($val){
+			font-size: (($unit * $i) + $min);
+		}
 	}
 	// @each $key, $val in $breakpoints{
 	// 	@include below($val){
