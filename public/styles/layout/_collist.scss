@@ -1,4 +1,5 @@
 // https://github.com/Jazcash/collist
+// needs to match heights with JS on IE9
 
 .collist{
 	display: flex;
@@ -12,27 +13,24 @@
 	}
 }
 
-.lteie9 .collist > li{
+html.lteie9 .collist > li{
 	display: inline-block;
 	margin-right: -4px;
 }
 
 .collist{
-	&.gutter{
-
-	}
 	@for $n from 1 through $maxCols{
 		$minWidth: 0;
 		$finalKey: null;
 		@each $key, $val in $breakpoints{
 			&.#{$key}-row-#{$n} > li{
 				@media (min-width: $minWidth) and (max-width: $val){
-					width: calc((100% / #{$n}) - (#{$gutter} * (#{$n - 1})) / #{$n});
+					width: calc((100% / #{$n}) - (#{$collistGutter} * (#{$n - 1})) / #{$n});
 					&:not(:nth-child(#{$n}n + 1)){
-						margin-left: $gutter;
+						margin-left: $collistGutter;
 					}
 					&:not(:nth-child(-n+#{$n})){
-						margin-top: $gutter;
+						margin-top: $collistGutter;
 					}
 				}
 			}
@@ -41,18 +39,14 @@
 		}
 		&.#{$finalKey}-row-#{$n} > li{
 			@media (min-width: $minWidth){
-				width: calc((100% / #{$n}) - (#{$gutter} * (#{$n - 1})) / #{$n});
+				width: calc((100% / #{$n}) - (#{$collistGutter} * (#{$n - 1})) / #{$n});
 				&:not(:nth-child(#{$n}n + 1)){
-					margin-left: $gutter;
+					margin-left: $collistGutter;
 				}
 				&:not(:nth-child(-n+#{$n})){
-					margin-top: $gutter;
+					margin-top: $collistGutter;
 				}
 			}
 		}
 	}
-}
-
-.collist > li{
-	background: blue;
 }

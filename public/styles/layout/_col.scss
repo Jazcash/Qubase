@@ -1,12 +1,58 @@
-.row{
-	background: blue;
+/*
+	Usage:
+
+	<ul class="row">
+		<li class="col-4 md-col-2">
+			Hello
+		</li>
+		<li class="col-4 md-col-2">
+			World
+		</li>
+		<li class="col-4 md-col-8">
+			World
+		</li>
+	</ul>
+
+	md-col-8 means column will take 8/12 of the space when the viewport has above medium width
+	Need to decide on whether classes like md-row-4 should apply below md or above md
+*/
+
+html.lteie9 ul.row > li{
+	display: inline-block;
+	margin-right: -4px;
 }
 
-@for $i from 1 through 12{
-	.col-#{$i}{
-		display: inline-block;
-		width: ((100% / 12) * $i);
-		background: red;
-		margin-right: -4px;
+ul.row{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	& > li{
+		vertical-align: top;
+	}
+	@for $i from 1 through 12{
+		& > li.col-#{$i}{
+			width: ((100% / 12) * $i);
+		}
+	}
+	@each $key, $val in $breakpoints{
+		@include above($val){
+			@for $i from 1 through 12{
+				& > li.#{$key}-col-#{$i}{
+					width: ((100% / 12) * $i);
+				}
+			}
+		}
+	}
+	&.match{
+		& > li > *{
+			height: 100%;
+		}
+	}
+	&.gutter{
+		& > li:not(:last-child){
+			padding-right: $spacer;
+		}
 	}
 }
