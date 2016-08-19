@@ -1,8 +1,53 @@
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6{
+/* Headings */
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6{
 	margin: 0;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: $mineshaft;
 }
 
-h1, .h1{
-	@include font-size(24px, 64px);
+h1,.h1{@include font-size(36px, 72px);}
+h2,.h2{@include font-size(32px, 48px);}
+h3,.h3{@include font-size(28px, 32px);}
+h4,.h4{@include font-size(24px, 26px);}
+h5,.h5{@include font-size(20px, 22px);}
+h6,.h6{@include font-size(16px, 18px);}
+
+h1, h2{
+	& + p, & + ul, & + ol, & + h1, & + h2, & + h3{
+		border-top: 1px solid rgba($mineshaft, 0.3);
+		padding-top: $spacer;
+		margin-top: $spacer/2;
+	}
+}
+
+section + h1, section + .h1,
+section + h2, section + .h2,
+section + h3, section + .h3,
+section + h4, section + .h4,
+section + h5, section + .h5,
+section + h6, section + .h6{
+	margin-top: $spacer;
+}
+
+/* Paragraph */
+p{
+	margin: 0;
+	font-family: "Open Sans", sans-serif;
+	color: $mineshaft;
+	@include font-size(14px, 18px);
+	& + h1, & + .h1,
+	& + h2, & + .h2,
+	& + h3, & + .h3,
+	& + h4, & + .h4,
+	& + h5, & + .h5,
+	& + h6, & + .h6,
+	& + p{
+		margin-top: $spacer;
+	}
+}
+
+/* List item */
+li{
+	@include font-size(14px, 18px);
 }

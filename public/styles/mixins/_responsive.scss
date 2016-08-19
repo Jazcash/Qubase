@@ -31,10 +31,4 @@
 			font-size: (($unit * $i) + $min);
 		}
 	}
-	// @each $key, $val in $breakpoints{
-	// 	@include below($val){
-	// 		$scale: ($val/map-get($breakpoints, "xl"));
-	// 		@debug (($range * $scale) + $min);64-16
-	// 	}
-	// }
 }

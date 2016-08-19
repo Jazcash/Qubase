@@ -1,4 +1,4 @@
-*{
+*, :before, :after{
 	box-sizing: border-box;
 }
 
@@ -10,4 +10,6 @@ body{
 	height: 100%;
 	background-color: $body-background;
 	font-family: $primary-font;
+	-webkit-font-smoothing: antialiased; // standardise font appearance between OS'
+	-moz-osx-font-smoothing: grayscale;
 }

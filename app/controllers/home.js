@@ -1,8 +1,10 @@
-var express = require("express"),
-	router = express.Router(),
-	fs = require("fs");
+var express = require("express");
+var router = express.Router();
+var fs = require("fs");
 
-var pages = fs.readdirSync("./app/views/pages/").map(function(x){ return x.split(".")[0]; });
+var qubasePages = fs.readdirSync("./app/views/qubase/").map(function(x){ return x.split(".")[0];});
+
+var pages = fs.readdirSync("./app/views/pages/").map(function(x){ return x.split(".")[0];});
 
 var patternFiles = fs.readdirSync("./app/views/partials/");
 var patternContents = [];
@@ -24,6 +26,7 @@ router.get("/", function(req, res, next) {
 		title: config.name,
 		description: config.description,
 		layout: "qubase",
+		qubasePages: qubasePages,
 		pages: pages
 	});
 });
@@ -41,6 +44,15 @@ pages.forEach(function(page){
 		res.render("pages/" + page, {
 			title: page,
 			layout: "main"
+		});
+	});
+});
+
+qubasePages.forEach(function(page){
+	router.get("/"+page, function(req, res, next){
+		res.render("qubase/" + page, {
+			title: page,
+			layout: "qubase"
 		});
 	});
 });

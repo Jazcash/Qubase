@@ -1,0 +1,4 @@
+http://line25.com/articles/10-html-tag-crimes-you-really-shouldnt-commit
+https://developer.mozilla.org/en/docs/Web/HTML/Element
+https://html5doctor.com/the-article-element/
+https://developer.mozilla.org/en-US/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting

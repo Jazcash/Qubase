@@ -1,0 +1,34 @@
+a{
+	color: $mariner;
+	&:link{
+		// unvisited link
+	}
+	&:visited{
+	}
+	&:hover{
+		color: lighten($mariner, 10%);
+	}
+	&:active{ // selected link
+		color: darken($mariner, 10%);
+	}
+	&:focus{
+
+	}
+}
+
+// this isn't a button, it's a link masquerading as a button
+.btn{
+	display: inline-block;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: #fff;
+	background: $mariner;
+	&:hover, &:focus{
+		color: #222;
+		background: lighten($mariner, 5%);
+	}
+	&:active{
+		color: #000;
+		background: darken($mariner, 5%);
+	}
+}

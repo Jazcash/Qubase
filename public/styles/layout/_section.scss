@@ -3,6 +3,10 @@
     &.wrapped{
         padding-left: calc((100% - #{$site-wrapper-width})/2);
         padding-right: calc((100% - #{$site-wrapper-width})/2);
+        @include below($site-wrapper-width){
+        	padding-left: $spacer;
+        	padding-right: $spacer;
+        }
         margin: 0 auto;
     }
     &.padded{

@@ -1,17 +1,24 @@
+// http://www.network-science.de/ascii/
+
 // general
 $site-wrapper-width: 900px;
 $spacer: 15px;
 
 // breakpoints
 $breakpoints: (
-	"xs": 350px,
-	"sm": 480px,
-	"md": 768px,
-	"lg": 1024px,
-	"xl": 1920px
+	"xs": 350px, // older smartphones
+	"sm": 480px, // newer smartphones
+	"md": 768px, // tablets and old laptops
+	"lg": 1024px, // new laptops and small monitors
+	"xl": 1440px // medium+ sized monitors
 );
 
 // colours
+// http://chir.ag/projects/name-that-color
+$mariner: #306BCF;
+$curiousblue: #308DCF;
+$mineshaft: #222;
+
 $body-background: #eee;
 
 // fonts
