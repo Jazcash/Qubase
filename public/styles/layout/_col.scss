@@ -25,34 +25,38 @@ html.lteie9 ul.row > li{
 ul.row{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	& > li{
 		vertical-align: top;
 	}
-	@for $i from 1 through 12{
-		& > li.col-#{$i}{
-			width: ((100% / 12) * $i);
-		}
-	}
-	@each $key, $val in $breakpoints{
-		@include above($val){
-			@for $i from 1 through 12{
-				& > li.#{$key}-col-#{$i}{
-					width: ((100% / 12) * $i);
-				}
-			}
-		}
-	}
 	&.match{
 		& > li > *{
 			height: 100%;
 		}
 	}
+	&:not(.gutter){
+
+	}
 	&.gutter{
-		& > li:not(:last-child){
-			padding-right: $spacer;
+		$gutter: 15px;
+		@each $key, $val in $breakpoints{
+			@include above($val){
+				@for $i from 1 through 12{
+					@if $i == 12{
+						$gutter: 0;
+					}
+					& > li.#{$key}-col-#{$i}:not(:last-child){
+						$width: ((((1 / 12) * $i) * 100) + %);
+						width: calc(#{$width} - #{$gutter});
+					}
+					& > li.#{$key}-col-#{$i}:last-child{
+						width: ((((1/12) * $i) * 100) + %);
+					}
+				}
+			}
 		}
 	}
 }

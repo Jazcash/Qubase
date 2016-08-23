@@ -1,0 +1,14 @@
+label{
+	font-weight: bold;
+}
+
+.required{
+	position: relative;
+	&:after{
+		content: "*";
+		color: red;
+		position: absolute;
+		top: -12px;
+		right: -10px;
+	}
+}

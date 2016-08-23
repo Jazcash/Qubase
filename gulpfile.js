@@ -4,7 +4,6 @@ let plumber = require("gulp-plumber");
 let livereload = require("gulp-livereload");
 let sass = require("gulp-sass");
 let sassGlob = require("gulp-sass-glob");
-let autoprefixer = require("gulp-autoprefixer");
 let cssnano = require("gulp-cssnano");
 let concat = require("gulp-concat");
 let uglify = require("gulp-uglify");
@@ -19,11 +18,13 @@ gulp.task("sass", function () {
 	.pipe(plumber())
 	.pipe(sassGlob())
 	.pipe(sass())
-	.pipe(autoprefixer({
-		browsers: ["last 50 versions"],
-		cascade: false
+	.pipe(cssnano({
+		autoprefixer: {
+			browsers: ["last 50 versions", "ie >= 9"],
+			add: true,
+			cascade: false
+		}
 	}))
-	.pipe(cssnano())
 	.pipe(rename({
 		suffix: ".min"
 	}))

@@ -3,7 +3,6 @@ h1,h2,h3,h4,h5,h6,
 .h1,.h2,.h3,.h4,.h5,.h6{
 	margin: 0;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: $mineshaft;
 }
 
 h1,.h1{@include font-size(36px, 72px);}
@@ -34,7 +33,6 @@ section + h6, section + .h6{
 p{
 	margin: 0;
 	font-family: "Open Sans", sans-serif;
-	color: $mineshaft;
 	@include font-size(14px, 18px);
 	& + h1, & + .h1,
 	& + h2, & + .h2,
@@ -45,9 +43,25 @@ p{
 	& + p{
 		margin-top: $spacer;
 	}
+	&.lead{
+		@include font-size(16px, 20px);
+	}
 }
 
 /* List item */
 li{
 	@include font-size(14px, 18px);
+}
+
+/* Blockquote */
+blockquote{
+	padding-left: $spacer;
+	border-left: 3px solid #ccc;
+	font-style: italic;
+	opacity: 0.8;
+	footer{
+		margin-top: $spacer/2;
+		font-style: normal;
+		font-weight: bold;
+	}
 }

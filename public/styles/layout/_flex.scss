@@ -20,11 +20,25 @@ html:not(.lteie9){
 		&-grow{
 			flex-grow: 1;
 		}
-		&-center-children{
-			align-items: center;
+		&-center-children-h{
 			justify-content: center;
 		}
-		&-center{
+		&-center-children-v{
+			align-items: center;
+		}
+		&-center-children{
+			justify-content: center;
+			align-items: center;
+		}
+		&-center-self-h{
+			// margin: 0 auto;
+			margin-left: 50%;
+			transform: translateX(-50%);
+		}
+		&-center-self-v{
+			align-self: center;
+		}
+		&-center-self{
 			align-self: center;
 			margin: 0 auto;
 		}
@@ -54,7 +68,7 @@ html.lteie9{
 				content: "";
 			}
 		}
-		&-col{
+		&-col, &-row{
 			&:after{
 				display: block;
 				visibility: hidden;
@@ -68,6 +82,22 @@ html.lteie9{
 		}
 		&-right{
 			float: right;
+		}
+		&-center-children-h{
+			width: 100%;
+			text-align: center;
+		}
+		&-center-children{
+			width: 100%;
+			text-align: center;
+		}
+		&-center-self-h{
+			margin-left: 50%;
+			transform: translateX(-50%);
+		}
+		&-center-self{
+			margin-left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 }
