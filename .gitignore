@@ -38,3 +38,6 @@ jspm_packages
 public/build
 public/build
 public/maps
+
+// mac ds store
+.DS_Store

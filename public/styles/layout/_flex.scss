@@ -31,9 +31,7 @@ html:not(.lteie9){
 			align-items: center;
 		}
 		&-center-self-h{
-			// margin: 0 auto;
-			margin-left: 50%;
-			transform: translateX(-50%);
+			margin: 0 auto;
 		}
 		&-center-self-v{
 			align-self: center;

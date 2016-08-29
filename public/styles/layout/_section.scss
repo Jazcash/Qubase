@@ -1,14 +1,5 @@
 .section{
     position: relative;
-    &.wrapped{
-        padding-left: calc((100% - #{$site-wrapper-width})/2);
-        padding-right: calc((100% - #{$site-wrapper-width})/2);
-        @include below($site-wrapper-width){
-        	padding-left: $spacer;
-        	padding-right: $spacer;
-        }
-        margin: 0 auto;
-    }
     &.padded{
     	$xs: $spacer/2;
     	$counter: 1;
@@ -26,5 +17,14 @@
     		}
     		$counter: $counter + 1;
     	}
+    }
+    &.wrapped{
+        padding-left: calc((100% - #{$site-wrapper-width})/2);
+        padding-right: calc((100% - #{$site-wrapper-width})/2);
+        @include below(($site-wrapper-width + ($spacer * 4))){
+        	padding-left: $spacer;
+        	padding-right: $spacer;
+        }
+        margin: 0 auto;
     }
 }
