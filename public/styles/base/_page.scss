@@ -12,4 +12,5 @@ body{
 	font-family: $primary-font;
 	-webkit-font-smoothing: antialiased; // standardise font appearance between OS'
 	-moz-osx-font-smoothing: grayscale;
+	overflow-y: scroll;
 }

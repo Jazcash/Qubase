@@ -19,32 +19,38 @@ html.lteie9 .collist > li{
 }
 
 .collist{
-	@for $n from 1 through $maxCols{
-		$minWidth: 0;
-		$finalKey: null;
+	@for $n from 1 through 12{
+		&.row-#{$n} > li{
+			width: calc((100% - (#{$gutter} * (#{$n} - 1))) / #{$n});
+			&:nth-child(#{$n}n + 1){
+				margin-left: 0;
+			}
+			&:nth-child(-n+#{$n}){
+				margin-top: 0;
+			}
+			&:not(:nth-child(-n+#{$n})){
+				margin-top: $gutter;
+			}
+			&:not(:nth-child(#{$n}n + 1)){
+				margin-left: $gutter;
+			}
+		}
 		@each $key, $val in $breakpoints{
 			&.#{$key}-row-#{$n} > li{
-				@media (min-width: $minWidth) and (max-width: $val){
-					width: calc((100% / #{$n}) - (#{$collistGutter} * (#{$n - 1})) / #{$n});
-					&:not(:nth-child(#{$n}n + 1)){
-						margin-left: $collistGutter;
+				@include above($val){
+					width: calc((100% - (#{$gutter} * (#{$n} - 1))) / #{$n});
+					&:nth-child(#{$n}n + 1){
+						margin-left: 0;
+					}
+					&:nth-child(-n+#{$n}){
+						margin-top: 0;
 					}
 					&:not(:nth-child(-n+#{$n})){
-						margin-top: $collistGutter;
+						margin-top: $gutter;
 					}
-				}
-			}
-			$minWidth: $val;
-			$finalKey: $key;
-		}
-		&.#{$finalKey}-row-#{$n} > li{
-			@media (min-width: $minWidth){
-				width: calc((100% / #{$n}) - (#{$collistGutter} * (#{$n - 1})) / #{$n});
-				&:not(:nth-child(#{$n}n + 1)){
-					margin-left: $collistGutter;
-				}
-				&:not(:nth-child(-n+#{$n})){
-					margin-top: $collistGutter;
+					&:not(:nth-child(#{$n}n + 1)){
+						margin-left: $gutter;
+					}
 				}
 			}
 		}

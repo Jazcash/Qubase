@@ -20,6 +20,12 @@ h1, h2{
 	}
 }
 
+h3,h4,h5,h6{
+	& + p{
+		margin-top: $spacer/2;
+	}
+}
+
 section + h1, section + .h1,
 section + h2, section + .h2,
 section + h3, section + .h3,
@@ -64,4 +70,13 @@ blockquote{
 		font-style: normal;
 		font-weight: bold;
 	}
+}
+
+/* Code */
+code{
+	background: #ddd;
+	border: 1px solid rgba(#000, 0.2);
+	border-radius: 2px;
+	padding: 0 4px;
+	font-size: 14px;
 }

@@ -23,40 +23,34 @@ html.lteie9 ul.row > li{
 }
 
 ul.row{
-	$gutter: 15px;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	box-sizing: none;
 	& > li{
 		vertical-align: top;
-	}
-	&.match{
-		& > li > *{
-			height: 100%;
+		& > *{
+			height: 100%; // match heights if flexbox supported
 		}
 	}
-	&:not(.gutter){
-		& > li.col-5th{
-			width: 20%;
-		}
+	&:not(.gutter) > li{
 		@for $i from 1 through 12{
-			& > li.col-#{$i}:not(:last-child){
-				$width: ((($i / 12) * 100) + %);
-				width: $width;
+			&.col-#{$i}{
+				width: ((($i / 12) * 100) + %);
+			}
+			&.col-5th{
+				width: 20%;
 			}
 		}
 		@each $key, $val in $breakpoints{
 			@include above($val){
 				@for $i from 1 through 12{
-					& > li.#{$key}-col-#{$i}:not(:last-child){
-						$width: ((((1 / 12) * $i) * 100) + %);
-						width: $width;
+					&.#{$key}-col-#{$i}{
+						width: ((($i / 12) * 100) + %);
 					}
-					& > li.#{$key}-col-#{$i}:last-child{
-						width: ((($i/12) * 100) + %);
+					&.#{$key}-col-5th{
+						width: 20%;
 					}
 				}
 			}
@@ -65,28 +59,29 @@ ul.row{
 	&.gutter{
 		margin-left: -$gutter/2;
 		margin-right: -$gutter/2;
-		& > li.col-12{
-			width: 100%;
-		}
-		& > li.col-5th{
-			width: 20%;
+		& > li{
 			padding-left: $gutter/2;
 			padding-right: $gutter/2;
-		}
-		@for $i from 1 through 11{
-			& > li.col-#{$i}{
-				$width: ((($i / 12) * 100) + %);
-				width: $width;
-				padding-left: $gutter/2;
-				padding-right: $gutter/2;
+			&.col-12{
+				width: 100%;
 			}
-		}
-		@each $key, $val in $breakpoints{
-			@include above($val){
-				@for $i from 1 through 12{
-					& > li.#{$key}-col-#{$i}{
-						$width: ((($i / 12) * 100) + %);
-						width: $width;
+			&.col-5th{
+				width: 20%;
+			}
+			@for $i from 1 through 11{
+				&.col-#{$i}{
+					width: ((($i / 12) * 100) + %);
+				}
+			}
+			@each $key, $val in $breakpoints{
+				@include above($val){
+					@for $i from 1 through 12{
+						&.#{$key}-col-#{$i}{
+							width: ((($i / 12) * 100) + %);
+						}
+						&.#{$key}-col-5th{
+							width: 20%;
+						}
 					}
 				}
 			}

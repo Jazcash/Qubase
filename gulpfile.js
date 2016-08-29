@@ -13,7 +13,7 @@ let jshint = require("gulp-jshint");
 let babel = require("gulp-babel");
 
 gulp.task("sass", function () {
-	gulp.src(["./public/styles/styles.scss", "./public/styles/qubase/qubase.scss"])
+	gulp.src(["./public/styles/styles.scss", "./public/styles/qubase.scss"])
 	.pipe(sourcemaps.init())
 	.pipe(plumber())
 	.pipe(sassGlob())

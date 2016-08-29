@@ -3,6 +3,7 @@
 // general
 $site-wrapper-width: 900px;
 $spacer: 15px;
+$gutter: $spacer;
 
 // breakpoints
 $breakpoints: (
@@ -26,7 +27,3 @@ $primary-font: "Open Sans", sans-serif;
 
 // type
 $base-font-size: 16px;
-
-// collist
-$maxCols: 6; // roughly 1KB per col
-$collistGutter: $spacer;

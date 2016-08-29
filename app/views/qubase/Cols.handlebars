@@ -1,62 +1,106 @@
 <div class="section wrapped padded-v-md">
-	<div class="section padded-v-xs">
-		<ul class="row match">
-			<li class="col-12 md-col-2">
-				<div class="person">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-			</li>
-			<li class="col-12 md-col-2">
-				<div class="person">Matched heights</div>
-			</li>
-			<li class="col-12 md-col-8">
-				<div class="person">Matched heights</div>
-			</li>
-		</ul>
-	</div>
+	<h2>Col</h2>
+	<p>
+		Cols provide a way of easily marking up simple, responsive layouts. Cols are <code>li</code> elements and must always belong to a <code>ul.row</code>. Classes from <code>col-1</code> to <code>col-12</code> are base specifiers and should only be used on their own if that particular row doesn't need to be responsive. Otherwise, you can set col sizes based on the breakpoints in <code>variables.scss</code> by prepending two letter sizes to the col, as specified in the aforementioned file. For example:</p>
+	<p>
+		<code>li class="col-12 md-col-6"</code> would render the column 100% width for all viewport widths. Responsive col classes take precedence, so <code>md-col-6</code> would render the column 50% width for viewports with a width  greater than the <code>md</code> breakpoint value.
+	</p>
+	<br>
 
 	<div class="section padded-v-xs">
-		<ul class="collist xs-row-1 sm-row-2 md-row-3 lg-row-4 xl-row-5">
-			<li class="person">James</li>
-			<li class="person">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-			<li class="person">George</li>
-			<li class="person">Harry</li>
-			<li class="person">Sally</li>
-			<li class="person">Tim</li>
-			<li class="person">Hannah</li>
-			<li class="person">Jordan</li>
-		</ul>
-	</div>
-
-	<div class="section padded-v-xs">
-		<ul class="row gutter">
-			<li class="sm-col-12 md-col-3">
-				<div class="person">Gutter</div>
+		<ul class="row">
+			<li class="col-12 xs-col-3">
+				<div class="item">Some longer text to show match heights</div>
 			</li>
-			<li class="sm-col-12 md-col-3">
-				<div class="person">Gutter</div>
+			<li class="col-12 xs-col-3">
+				<div class="item">col-12 xs-col-3</div>
 			</li>
-			<li class="sm-col-12 md-col-6">
-				<div class="person">Gutter</div>
+			<li class="col-12 xs-col-6">
+				<div class="item">col-12 xs-col-6</div>
 			</li>
 		</ul>
 	</div>
 
 	<div class="section padded-v-xs">
 		<ul class="row gutter">
-			<li class="col-5th">
-				<div class="person">Fifth</div>
+			<li class="col-12 xs-col-3">
+				<div class="item">col-12 xs-col-3</div>
 			</li>
-			<li class="col-5th">
-				<div class="person">Fifth</div>
+			<li class="col-12 xs-col-3">
+				<div class="item">col-12 xs-col-3</div>
 			</li>
-			<li class="col-5th">
-				<div class="person">Fifth</div>
+			<li class="col-12 xs-col-6">
+				<div class="item">col-12 xs-col-6</div>
 			</li>
-			<li class="col-5th">
-				<div class="person">Fifth</div>
+		</ul>
+	</div>
+
+	<br>
+	<h3>Col-5th</h3>
+	<p>
+		<code>col-5th</code> is provides a way to specify 20% width, as a typical 12 col system does not support this.</p>
+	<br>
+
+	<div class="section padded-v-xs">
+		<ul class="row">
+			<li class="col-12 xs-col-5th">
+				<div class="item">col-12 xs-col-5th</div>
 			</li>
-			<li class="col-5th">
-				<div class="person">Fifth</div>
+			<li class="col-12 xs-col-5th">
+				<div class="item">col-12 xs-col-5th</div>
 			</li>
+			<li class="col-12 xs-col-5th">
+				<div class="item">col-12 xs-col-5th</div>
+			</li>
+			<li class="col-12 xs-col-5th">
+				<div class="item">col-12 xs-col-5th</div>
+			</li>
+			<li class="col-12 xs-col-5th">
+				<div class="item">col-12 xs-col-5th</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="section padded-v-xs">
+		<ul class="row gutter">
+			<li class="col-12 xs-col-5th">
+				<div class="item">col-12 xs-col-5th</div>
+			</li>
+			<li class="col-12 xs-col-5th">
+				<div class="item">col-12 xs-col-5th</div>
+			</li>
+			<li class="col-12 xs-col-5th">
+				<div class="item">col-12 xs-col-5th</div>
+			</li>
+			<li class="col-12 xs-col-5th">
+				<div class="item">col-12 xs-col-5th</div>
+			</li>
+			<li class="col-12 xs-col-5th">
+				<div class="item">col-12 xs-col-5th</div>
+			</li>
+		</ul>
+	</div>
+
+	<br>
+	<h2>Collist</h2>
+	<p>
+		Collist is a responsive layout system that allows you to arrange a list of elements in a grid-like fashion. To use it, simply add the <code>collist</code> class to a <code>ul</code>. Like col, class <code>row-n</code> (where <code>n</code> is 1-12) provides a base width. You can then follow this with classes that specify how many items to display per row at particular breakpoints. For example, the class <code>md-row-3</code> will show 3 items per row for viewport widths greater than the <coede>md</coede> breakpoint. Greater breakpoints take precedence over smaller ones.
+	</p>
+	<br>
+
+	<div class="section padded-v-xs">
+		<ul class="collist row-1 xs-row-2 sm-row-3 md-row-4">
+			<li><div class="item">Some text</div></li>
+			<li><div class="item">Some text</div></li>
+			<li><div class="item">Some text</div></li>
+			<li><div class="item">Some text</div></li>
+			<li><div class="item">Some text</div></li>
+			<li><div class="item">Some text</div></li>
+			<li><div class="item">Some text</div></li>
+			<li><div class="item">Some text</div></li>
+			<li><div class="item">Some text</div></li>
+			<li><div class="item">Some text</div></li>
+			<li><div class="item">Some text</div></li>
 		</ul>
 	</div>
 </div>
