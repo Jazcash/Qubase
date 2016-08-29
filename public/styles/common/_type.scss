@@ -73,7 +73,7 @@ blockquote{
 }
 
 /* Code */
-code{
+:not(pre) > code{
 	background: #ddd;
 	border: 1px solid rgba(#000, 0.2);
 	border-radius: 2px;

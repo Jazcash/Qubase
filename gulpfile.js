@@ -11,6 +11,7 @@ let rename = require("gulp-rename");
 let sourcemaps = require("gulp-sourcemaps");
 let jshint = require("gulp-jshint");
 let babel = require("gulp-babel");
+let include  = require("gulp-include");
 
 gulp.task("sass", function () {
 	gulp.src(["./public/styles/styles.scss", "./public/styles/qubase.scss"])
@@ -40,8 +41,15 @@ gulp.task("scripts", function(){
 	.pipe(jshint({
 		browser: true,
 		devel: true,
-		esversion: 6
+		esversion: 6,
+		loopfunc: true
 	}))
+	.pipe(include({
+		extensions: "js",
+		includePaths: [
+			__dirname + "/public/scripts"
+		]
+	})).on('error', console.log)
 	.pipe(babel({
 		presets: ["es2015"]
 	}))
@@ -60,7 +68,7 @@ gulp.task("watch", function() {
 
 gulp.task("dev", function () {
 	livereload.listen({
-		quiet: true
+		quiet: false
 	});
 	nodemon({
 		script: "app.js",

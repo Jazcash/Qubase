@@ -2,12 +2,12 @@
     <h4>Pattern Library</h4>
 
     {{#each patterns}}
-    	<section class="pattern">
-    		<h5 id="{{filename}}">{{filename}}<a href="#" title="View Source" class="show-source"><i class="fa fa-code"></i></a></h5>
-    		<div class="pattern__source wrapper">
-    			<pre class="prettyprint"><code>{{contents}}</code>
-    			</pre>
+    	<section class="section wrapped padded-md pattern">
+    		<div class="flex-row">
+				<h5>{{filename}}</h5>
+				<button class="flex-right pattern__code-btn">View code <i class="fa fa-code" aria-hidden="true"></i></button>
     		</div>
+			<pre class="pattern__code" style="display: none;"><code class="language-markup">{{contents}}</code></pre>
     		<div>{{{contents}}}</div>
     	</section>
     {{/each}}
