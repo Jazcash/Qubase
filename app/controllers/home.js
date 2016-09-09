@@ -2,7 +2,8 @@ var express = require("express");
 var router = express.Router();
 var fs = require("fs");
 
-var qubasePages = fs.readdirSync("./app/views/qubase/").map(function(x){ return x.split(".")[0];});
+var qubasePages =  fs.readdirSync("./app/views/qubase").filter(function(x){ return x.split(".").length > 1 }).map(function(x){ return x.split(".")[0];});
+var qubaseExamples = fs.readdirSync("./app/views/qubase/examples").map(function(x){ return x.split(".")[0];});
 
 var pages = fs.readdirSync("./app/views/pages/").map(function(x){ return x.split(".")[0];});
 
@@ -26,6 +27,7 @@ router.get("/", function(req, res, next) {
 		title: config.name,
 		description: config.description,
 		layout: "qubase",
+		qubaseExamples: qubaseExamples,
 		qubasePages: qubasePages,
 		pages: pages
 	});
@@ -48,8 +50,17 @@ pages.forEach(function(page){
 	});
 });
 
+qubaseExamples.forEach(function(page){
+	router.get("/qubase/"+page, function(req, res, next){
+		res.render("qubase/examples/" + page, {
+			title: page,
+			layout: "qubase"
+		});
+	});
+});
+
 qubasePages.forEach(function(page){
-	router.get("/"+page, function(req, res, next){
+	router.get("/qubase/"+page, function(req, res, next){
 		res.render("qubase/" + page, {
 			title: page,
 			layout: "qubase"

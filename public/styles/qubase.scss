@@ -4,3 +4,12 @@
 	border: 1px solid #aaa;
 	background: #fff;
 }
+
+.qubase-spacer{
+	margin: 0 25px;
+}
+
+input[type=range][orient=vertical]{
+	-webkit-appearance: slider-vertical;
+	writing-mode: bt-lr;
+}
