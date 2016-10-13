@@ -46,7 +46,8 @@ p{
 	& + h4, & + .h4,
 	& + h5, & + .h5,
 	& + h6, & + .h6,
-	& + p{
+	& + p,
+	& + button,{
 		margin-top: $spacer;
 	}
 	&.lead{
@@ -79,4 +80,8 @@ blockquote{
 	border-radius: 2px;
 	padding: 0 4px;
 	font-size: 14px;
+}
+
+small{
+	font-size: 60%;
 }

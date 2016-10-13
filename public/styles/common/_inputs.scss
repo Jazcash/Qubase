@@ -50,3 +50,7 @@ label{
 		color: red;
 	}
 }
+
+button{
+	@extend .btn;
+}
