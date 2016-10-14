@@ -2,23 +2,28 @@
 
 // general
 $site-wrapper-width: 900px;
-$spacer: 15px;
+
+$spacer-xs: 5px;
+$spacer-s:  10px;
+$spacer:    15px;
+$spacer-l:  20px;
+$spacer-xl: 25px;
+
 $gutter: $spacer;
 
 // breakpoints
 $breakpoints: (
-	"xs": 350px, // older smartphones
-	"sm": 480px, // newer smartphones
-	"md": 768px, // tablets and old laptops
+	"xs": 350px,  // older smartphones
+	"sm": 480px,  // newer smartphones
+	"md": 768px,  // tablets and old laptops
 	"lg": 1024px, // new laptops and small monitors
-	"xl": 1440px // medium+ sized monitors
+	"xl": 1440px  // medium+ sized monitors
 );
 
-// colours
-// http://chir.ag/projects/name-that-color
-$mariner: #306BCF;
+// colours - http://chir.ag/projects/name-that-color
+$mariner:     #306BCF;
 $curiousblue: #308DCF;
-$mineshaft: #222;
+$mineshaft:   #222;
 
 $body-background: #eee;
 

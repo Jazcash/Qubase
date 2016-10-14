@@ -1,90 +1,50 @@
-/*
-	Usage:
-
-	<ul class="row">
-		<li class="col-4 md-col-2">
-			Hello
-		</li>
-		<li class="col-4 md-col-2">
-			World
-		</li>
-		<li class="col-4 md-col-8">
-			World
-		</li>
-	</ul>
-
-	md-col-8 means column will take 8/12 of the space when the viewport has above medium width
-	Need to decide on whether classes like md-row-4 should apply below md or above md
-*/
-
-html.lteie9 ul.row > li{
+.no-flexbox .row > *{
 	display: inline-block;
 	margin-right: -4px;
 }
 
-ul.row{
+@for $i from 1 through 12{
+	.col-#{$i}{
+		width: (($i/12) * 100%);
+	}
+}
+.col-5th{
+	width: 20%;
+}
+
+.gutter > .col{
+	@for $i from 1 through 12{
+		&-#{$i}{
+			width: calc((($i/12) * 100%) - 10px);
+		}
+	}
+}
+
+@each $key, $val in $breakpoints{
+	@include above($val){
+		@for $i from 1 through 12{
+			&.#{$key}-col-#{$i}{
+				width: (($i / 12) * 100%);
+			}
+			&.#{$key}-col-5th{
+				width: 20%;
+			}
+		}
+	}
+}
+
+.row{
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	& > li{
-		vertical-align: top;
-		& > *{
-			height: 100%; // match heights if flexbox supported
-		}
-	}
-	&:not(.gutter) > li{
-		@for $i from 1 through 12{
-			&.col-#{$i}{
-				width: ((($i / 12) * 100) + %);
-			}
-			&.col-5th{
-				width: 20%;
-			}
-		}
-		@each $key, $val in $breakpoints{
-			@include above($val){
-				@for $i from 1 through 12{
-					&.#{$key}-col-#{$i}{
-						width: ((($i / 12) * 100) + %);
-					}
-					&.#{$key}-col-5th{
-						width: 20%;
-					}
-				}
-			}
-		}
-	}
 	&.gutter{
 		margin-left: -$gutter/2;
 		margin-right: -$gutter/2;
-		& > li{
+		& > *{
 			padding-left: $gutter/2;
 			padding-right: $gutter/2;
-			&.col-12{
-				width: 100%;
-			}
-			&.col-5th{
-				width: 20%;
-			}
-			@for $i from 1 through 11{
-				&.col-#{$i}{
-					width: ((($i / 12) * 100) + %);
-				}
-			}
-			@each $key, $val in $breakpoints{
-				@include above($val){
-					@for $i from 1 through 12{
-						&.#{$key}-col-#{$i}{
-							width: ((($i / 12) * 100) + %);
-						}
-						&.#{$key}-col-5th{
-							width: 20%;
-						}
-					}
-				}
-			}
 		}
 	}
 }

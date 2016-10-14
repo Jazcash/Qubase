@@ -14,7 +14,7 @@ let babel = require("gulp-babel");
 let include  = require("gulp-include");
 
 gulp.task("sass", function () {
-	gulp.src(["./public/styles/styles.scss", "./public/styles/qubase.scss"])
+	gulp.src(["./public/styles/styles.scss"])
 	.pipe(sourcemaps.init())
 	.pipe(plumber())
 	.pipe(sassGlob())
@@ -35,7 +35,7 @@ gulp.task("sass", function () {
 });
 
 gulp.task("scripts", function(){
-	gulp.src(["./public/scripts/main.js"])
+	gulp.src(["./public/scripts/scripts.js"])
 	.pipe(sourcemaps.init())
 	.pipe(plumber())
 	.pipe(jshint({
@@ -44,12 +44,7 @@ gulp.task("scripts", function(){
 		esversion: 6,
 		loopfunc: true
 	}))
-	.pipe(include({
-		extensions: "js",
-		includePaths: [
-			__dirname + "/public/scripts"
-		]
-	})).on('error', console.log)
+	.pipe(include()).on('error', console.log)
 	.pipe(babel({
 		presets: ["es2015"]
 	}))
@@ -63,7 +58,7 @@ gulp.task("scripts", function(){
 
 gulp.task("watch", function() {
 	gulp.watch("./public/styles/**/*.scss", ["sass"]);
-	gulp.watch("./public/scripts/*.js", ["scripts"]);
+	gulp.watch("./public/scripts/**/*.js", ["scripts"]);
 });
 
 gulp.task("dev", function () {

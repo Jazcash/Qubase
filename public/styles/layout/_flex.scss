@@ -1,12 +1,14 @@
-html:not(.lteie9){
+.flexbox{
 	.flex{
 		&-row{
 			display: flex;
 			flex-direction: row;
+			flex-wrap: wrap;
 		}
 		&-col{
 			display: flex;
 			flex-direction: column;
+			flex-wrap: wrap;
 		}
 		&-left{
 			margin-right: auto;
@@ -14,11 +16,17 @@ html:not(.lteie9){
 		&-right{
 			margin-left: auto;
 		}
-		&-wrap{
-			flex-wrap: wrap;
+		&-nowrap{
+			flex-wrap: nowrap;
 		}
 		&-grow{
 			flex-grow: 1;
+		}
+		&-shrink{
+			flex-shrink: 1;
+		}
+		&-basis{
+			flex-basis: 100%;
 		}
 		&-center-children-h{
 			justify-content: center;
@@ -48,22 +56,12 @@ html:not(.lteie9){
 		}
 	}
 }
-
-html.lteie9{
+.no-flexbox{
 	.flex{
 		&-row{
 			& > *{
 				display: inline-block;
-				&:not(:first-child){
-					margin-left: -4px;
-				}
-			}
-			&:after{
-				display: block;
-				visibility: hidden;
-				clear: both;
-				height: 0;
-				content: "";
+				margin-right: -4px;
 			}
 		}
 		&-col, &-row{
@@ -77,9 +75,11 @@ html.lteie9{
 		}
 		&-left{
 			float: left;
+			margin-right: initial;
 		}
 		&-right{
 			float: right;
+			margin-right: initial;
 		}
 		&-center-children-h{
 			width: 100%;
