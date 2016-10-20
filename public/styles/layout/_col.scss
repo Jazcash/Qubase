@@ -12,14 +12,6 @@
 	width: 20%;
 }
 
-.gutter > .col{
-	@for $i from 1 through 12{
-		&-#{$i}{
-			width: calc((($i/12) * 100%) - 10px);
-		}
-	}
-}
-
 @each $key, $val in $breakpoints{
 	@include above($val){
 		@for $i from 1 through 12{
