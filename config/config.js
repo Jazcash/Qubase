@@ -5,7 +5,7 @@ env = process.env.NODE_ENV || "development";
 var config = {
 	development: {
 		root: rootPath,
-		port: 3000,
+		port: 3001,
 	},
 
 	production: {

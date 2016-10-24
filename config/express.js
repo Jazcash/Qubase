@@ -1,6 +1,5 @@
 var express = require("express");
 var glob = require("glob");
-
 var favicon = require("serve-favicon");
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
@@ -14,13 +13,14 @@ module.exports = function(app, config) {
 	app.locals.ENV = env;
 	app.locals.ENV_DEVELOPMENT = env == "development";
 
-	app.engine("handlebars", exphbs({
+	app.engine(".hbs", exphbs({
+		extname: ".hbs",
 		layoutsDir: config.root + "/app/views/layouts/",
 		defaultLayout: "main",
 		partialsDir: [config.root + "/app/views/partials/"]
 	}));
 	app.set("views", config.root + "/app/views");
-	app.set("view engine", "handlebars");
+	app.set("view engine", ".hbs");
 
 	app.use(logger("dev"));
 	app.use(bodyParser.json());
