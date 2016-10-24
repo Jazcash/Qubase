@@ -7,6 +7,7 @@ var bodyParser = require("body-parser");
 var compress = require("compression");
 var methodOverride = require("method-override");
 var exphbs  = require("express-handlebars");
+var helpers = require('handlebars-helpers')();
 
 module.exports = function(app, config) {
 	var env = process.env.NODE_ENV || "development";
@@ -17,7 +18,8 @@ module.exports = function(app, config) {
 		extname: ".hbs",
 		layoutsDir: config.root + "/app/views/layouts/",
 		defaultLayout: "main",
-		partialsDir: [config.root + "/app/views/partials/"]
+		partialsDir: [config.root + "/app/views/partials/"],
+		helpers: helpers
 	}));
 	app.set("views", config.root + "/app/views");
 	app.set("view engine", ".hbs");

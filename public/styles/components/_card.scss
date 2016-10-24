@@ -1,0 +1,15 @@
+.card{
+	max-width: (($site-wrapper-width/3) - 10px);
+	&__image{
+
+	}
+	&__content{
+		padding: 10px;
+		h4{
+
+		}
+		p{
+			margin: 0;
+		}
+	}
+}
