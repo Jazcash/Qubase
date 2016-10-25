@@ -1,12 +1,23 @@
-Explanation of the styles folder and what each file is and how it should be used
+#Style guide
 
-Use tabs for indentation, spaces for alignment
-Braces should stay on the same line as the opening selector, without a space inbetween
-Newlines should only be used for separation of contextually unrelated elements
-BEM nesting should be used, but ideally should only ever go one level deep
-Responsive websites should be developed in the same manner as they were designed. Mobile first or desktop first. I.e. using chrome's device preview mode first and above instead of below
-Try to use flex for layouts instead of cols if it makes sense
-When creating component files, the named hierarchy of the component should be noted at the top of the file
+Stylesheets should be:
+
+- Clean, easily readable and modifiable
+- Modular, separated and organised
+- Compatible with browsers as per the [browser matrix](matrix)
+
+##Code rules
+
+- Responsive rules should use the `above` or `below` mixins. Stick to using only one per project for consistency
+- When IE is supported, be aware that flex uses attempted fallbacks and isn't guarenteed to work 100%.
+- Don't use vendor prefixes, autoprefixer takes care of them
+- Don't use floats
+- Avoid !important as much as possible
+- Try to keep control of your z-indexes and only use them if absolutely necessary. Never use anything like `9999`
+- To change the transparency of a colour, use rgba(#fff, 0.5)
+- When creating component files, the named hierarchy of the component should be noted at the top of the file
+
+
 Never use floats. Ever.
 Avoid using !important as much as possible
 Z-indexes should be kept small. Try to stick to increments of 10

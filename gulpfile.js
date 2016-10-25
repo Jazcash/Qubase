@@ -35,7 +35,12 @@ gulp.task("sass", function () {
 });
 
 gulp.task("scripts", function(){
-	gulp.src(["./public/scripts/scripts.js"])
+	gulp.src([
+		"./public/scripts/util.js",
+		"./public/scripts/components/**/*.js",
+		"./public/scripts/vendor/modernizr-custom.js",
+		"./public/scripts/vendor/flex.js"
+	])
 	.pipe(sourcemaps.init())
 	.pipe(plumber())
 	.pipe(jshint({
@@ -67,7 +72,7 @@ gulp.task("dev", function () {
 	});
 	nodemon({
 		script: "app.js",
-		ext: "js handlebars",
+		ext: "js hbs",
 		stdout: false,
 		verbose: false
 	}).on("readable", function () {
