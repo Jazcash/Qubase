@@ -11,7 +11,6 @@ let rename = require("gulp-rename");
 let sourcemaps = require("gulp-sourcemaps");
 let jshint = require("gulp-jshint");
 let babel = require("gulp-babel");
-let include  = require("gulp-include");
 
 gulp.task("sass", function () {
 	gulp.src(["./public/styles/styles.scss"])
@@ -49,7 +48,6 @@ gulp.task("scripts", function(){
 		esversion: 6,
 		loopfunc: true
 	}))
-	.pipe(include()).on('error', console.log)
 	.pipe(babel({
 		presets: ["es2015"]
 	}))
