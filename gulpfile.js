@@ -1,7 +1,6 @@
 let gulp = require("gulp");
 let nodemon = require("gulp-nodemon");
 let plumber = require("gulp-plumber");
-let livereload = require("gulp-livereload");
 let sass = require("gulp-sass");
 let sassGlob = require("gulp-sass-glob");
 let cssnano = require("gulp-cssnano");
@@ -11,9 +10,10 @@ let rename = require("gulp-rename");
 let sourcemaps = require("gulp-sourcemaps");
 let jshint = require("gulp-jshint");
 let babel = require("gulp-babel");
+var browserSync = require('browser-sync').create();
 
 gulp.task("sass", function () {
-	gulp.src(["./public/styles/styles.scss"])
+	return gulp.src(["./public/styles/styles.scss"])
 	.pipe(sourcemaps.init())
 	.pipe(plumber())
 	.pipe(sassGlob())
@@ -30,11 +30,11 @@ gulp.task("sass", function () {
 	}))
 	.pipe(sourcemaps.write("../maps"))
 	.pipe(gulp.dest("./public/build"))
-	.pipe(livereload());
+	.pipe(browserSync.stream());
 });
 
 gulp.task("scripts", function(){
-	gulp.src([
+	return gulp.src([
 		"./public/scripts/util.js",
 		"./public/scripts/components/**/*.js",
 		"./public/scripts/vendor/modernizr-custom.js",
@@ -56,37 +56,37 @@ gulp.task("scripts", function(){
 	.pipe(uglify())
 	.pipe(sourcemaps.write("../maps"))
 	.pipe(gulp.dest("./public/build"))
-	.pipe(livereload());
+	.pipe(browserSync.stream());
 });
 
 gulp.task("watch", function() {
 	gulp.watch("./public/styles/**/*.scss", ["sass"]);
 	gulp.watch("./public/scripts/**/*.js", ["scripts"]);
+	gulp.watch("./app/views/**/*").on("change", browserSync.reload);
 });
 
-gulp.task("dev", function () {
-	livereload.listen({
-		quiet: false
-	});
-	nodemon({
-		script: "app.js",
-		ext: "js hbs",
-		stdout: false,
-		verbose: false
-	}).on("readable", function () {
-		this.stdout.on("data", function (chunk) {
-			if(/^Express server listening on port/.test(chunk)){
-				livereload.changed(__dirname);
-			}
-		});
-		this.stdout.pipe(process.stdout);
-		this.stderr.pipe(process.stderr);
+gulp.task("browser-sync", ["nodemon"], function() {
+    browserSync.init({
+        proxy: "http://localhost:3001",
+        port: 7000
+    });
+});
+
+gulp.task("nodemon", function (cb) {
+	var started = false;
+	return nodemon({
+		script: "app.js"
+	}).on('start', function () {
+		if (!started) {
+			cb();
+			started = true;
+		}
 	});
 });
 
 gulp.task("default", [
 	"sass",
 	"scripts",
-	"dev",
+	"browser-sync",
 	"watch"
 ]);
