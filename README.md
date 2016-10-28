@@ -16,11 +16,11 @@ Qubase is an opinionated frontend development boilerplate for getting a markup p
 
 Before creating a markup project, make sure you have the following documents or information:
 
-- Design - Completed designs for every page, including responsive designs for applicable pages/components
-- Browser matrix - Which browsers are supported, which should be functional and which aren't supported at all. This should include a decision on whether progressive enhancement will be used or graceful degradation
-- Branding resources - Not as important for markup as design, but still useful
-- Documented interactions - Documented behaviour for interactive components. E.g. what happens when a button is clicked or a link is hovered. Should the header be sticky etc.
-- Documented component breakdown and naming - Analysis of what elements are individual components, their names and names of smaller parts within them. Useful for handlebars partials and BEM naming
+- **Design** - Completed designs for every page, including responsive designs for applicable pages/components
+- **Browser matrix** - Which browsers are supported, which should be functional and which aren't supported at all. This should include a decision on whether progressive enhancement will be used or graceful degradation
+- **Branding resources** - Not as important for markup as design, but still useful
+- **Documented interactions** - Documented behaviour for interactive components. E.g. what happens when a button is clicked or a link is hovered. Should the header be sticky etc.
+- **Documented component breakdown and naming** - Analysis of what parts of the design are individual components, their names and names of smaller parts within them. Useful for handlebars partials and BEM naming. A good process for this is printing off the design and labelling everything
 
 ## Setup
 
@@ -34,17 +34,83 @@ Before creating a markup project, make sure you have the following documents or 
 That's it! If you had no errors, you can now just run `gulp` to compile assets and launch the server. If you do have problems feel free to open an [issue](https://github.com/Jazcash/Qubase/issues).
 
 ## Docs (WIP)
-- Directory overview
-- Gulpfile
-- Browsersync
-- Handlebars
-- Setting up automatic Beanstalk deployment
-- Graceful degradation or progressive enhancement
-- Responsive tips
-- Style guide
-- Pattern library
-- Coding rules and guidelines
-	- General
-	- Markup
-	- Styles
-	- Scripts
+
+### Table of contents
+
+- [Directory overview](#directory-overview)
+- [Gulpfile](#gulpfile)
+	- [CSSNano and Autoprefixer](#cssnano-and-autoprefixer)
+	- [JSHint](#jshint)
+	- [Sourcemaps](#sourcemaps)
+	- [Babel](#babel)
+	- [Browsersync](#browsersync)
+	- [Nodemon](#nodemon)
+- [Handlebars](#handlebars)
+- [Setting up automatic Beanstalk deployment](#setting-up-automatic-beanstalk-deployment)
+- [Graceful degradation or progressive enhancement](#graceful-degradation-or-progressive-enhancement)
+- [Responsive](#responsive)
+- [Style guide](#style-guide)
+- [Pattern library](#pattern-library)
+- [Coding rules and guidelines](#coding-rules-and-guidelines)
+	- [General](#general)
+	- [Markup](#markup)
+	- [Styles](#styles)
+	- [Scripts](#scripts)
+
+#### Directory overview
+[back to top](#table-of-contents)
+
+#### Gulpfile
+[back to top](#table-of-contents)
+
+##### CSSNano and Autoprefixer
+[back to top](#table-of-contents)
+
+##### JSHint
+[back to top](#table-of-contents)
+
+##### Sourcemaps
+[back to top](#table-of-contents)
+
+##### Babel
+[back to top](#table-of-contents)
+
+##### Browsersync
+[back to top](#table-of-contents)
+
+##### Nodemon
+[back to top](#table-of-contents)
+
+#### Handlebars
+[back to top](#table-of-contents)
+
+#### Setting up automatic Beanstalk deployment
+[back to top](#table-of-contents)
+
+#### Graceful degradation or progressive enhancement
+[back to top](#table-of-contents)
+
+#### Responsive
+[back to top](#table-of-contents)
+
+#### Style guide
+[back to top](#table-of-contents)
+
+#### Pattern library
+[back to top](#table-of-contents)
+
+#### Coding rules and guidelines
+[back to top](#table-of-contents)
+
+##### General
+[back to top](#table-of-contents)
+
+##### Markup
+[back to top](#table-of-contents)
+
+##### Styles
+[back to top](#table-of-contents)
+
+##### Scripts
+[back to top](#table-of-contents)
+
