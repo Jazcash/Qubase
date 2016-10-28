@@ -57,60 +57,60 @@ That's it! If you had no errors, you can now just run `gulp` to compile assets a
 	- [Styles](#styles)
 	- [Scripts](#scripts)
 
-#### Directory overview
-[back to top](#table-of-contents)
+### Directory overview
+[[[back to top](#table-of-contents)]]
 
-#### Gulpfile
-[back to top](#table-of-contents)
+### Gulpfile
+[[back to top](#table-of-contents)]
 
-##### CSSNano and Autoprefixer
-[back to top](#table-of-contents)
+#### CSSNano and Autoprefixer
+[[back to top](#table-of-contents)]
 
-##### JSHint
-[back to top](#table-of-contents)
+#### JSHint
+[[back to top](#table-of-contents)]
 
-##### Sourcemaps
-[back to top](#table-of-contents)
+#### Sourcemaps
+[[back to top](#table-of-contents)]
 
-##### Babel
-[back to top](#table-of-contents)
+#### Babel
+[[back to top](#table-of-contents)]
 
-##### Browsersync
-[back to top](#table-of-contents)
+#### Browsersync
+[[back to top](#table-of-contents)]
 
-##### Nodemon
-[back to top](#table-of-contents)
+#### Nodemon
+[[back to top](#table-of-contents)]
 
-#### Handlebars
-[back to top](#table-of-contents)
+### Handlebars
+[[back to top](#table-of-contents)]
 
-#### Setting up automatic Beanstalk deployment
-[back to top](#table-of-contents)
+### Setting up automatic Beanstalk deployment
+[[back to top](#table-of-contents)]
 
-#### Graceful degradation or progressive enhancement
-[back to top](#table-of-contents)
+### Graceful degradation or progressive enhancement
+[[back to top](#table-of-contents)]
 
-#### Responsive
-[back to top](#table-of-contents)
+### Responsive
+[[back to top](#table-of-contents)]
 
-#### Style guide
-[back to top](#table-of-contents)
+### Style guide
+[[back to top](#table-of-contents)]
 
-#### Pattern library
-[back to top](#table-of-contents)
+### Pattern library
+[[back to top](#table-of-contents)]
 
-#### Coding rules and guidelines
-[back to top](#table-of-contents)
+### Coding rules and guidelines
+[[back to top](#table-of-contents)]
 
-##### General
-[back to top](#table-of-contents)
+#### General
+[[back to top](#table-of-contents)]
 
-##### Markup
-[back to top](#table-of-contents)
+#### Markup
+[[back to top](#table-of-contents)]
 
-##### Styles
-[back to top](#table-of-contents)
+#### Styles
+[[back to top](#table-of-contents)]
 
-##### Scripts
-[back to top](#table-of-contents)
+#### Scripts
+[[back to top](#table-of-contents)]
 
