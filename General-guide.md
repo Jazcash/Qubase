@@ -1,10 +1,4 @@
-#General guide
-
-##Responsive
-
-When developing responsive sites, you should test for the smallest-support device first, then work up.
-
-##Code rules
+# General code rules and guidelines
 
 - Use double quotes `"` instead of single `'` quotes
 - Indentation should use 4 character wide tabs, not spaces
