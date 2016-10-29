@@ -1,25 +1,15 @@
 {
   "name": "Qubase",
-  "description": "Qubase is Quba's frontend base for kickstarting new projects",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/qubanewmedia/Core"
-  },
-  "license": "MIT",
-  "author": "qubanewmedia",
-  "bugs": {
-    "url": "https://github.com/qubanewmedia/Core/issues"
-  },
   "scripts": {
     "start": "node app.js"
   },
-  "homepage": "https://github.com/qubanewmedia/Core",
   "dependencies": {
     "body-parser": "^1.13.3",
     "compression": "^1.5.2",
     "cookie-parser": "^1.3.3",
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
+    "handlebars-helpers": "^0.7.5",
     "glob": "^5.0.3",
     "method-override": "^2.3.0",
     "morgan": "^1.6.1",
@@ -27,15 +17,13 @@
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.13.2",
-    "browser-sync": "^2.14.0",
+    "browser-sync": "^2.17.5",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
-    "gulp-include": "^2.3.1",
     "gulp-jshint": "^2.0.1",
-    "gulp-livereload": "^3.8.0",
     "gulp-nodemon": "^2.0.2",
     "gulp-plumber": "^1.0.0",
     "gulp-rename": "^1.2.2",

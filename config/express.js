@@ -1,6 +1,5 @@
 var express = require("express");
 var glob = require("glob");
-
 var favicon = require("serve-favicon");
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
@@ -8,19 +7,22 @@ var bodyParser = require("body-parser");
 var compress = require("compression");
 var methodOverride = require("method-override");
 var exphbs  = require("express-handlebars");
+var helpers = require('handlebars-helpers')();
 
 module.exports = function(app, config) {
 	var env = process.env.NODE_ENV || "development";
 	app.locals.ENV = env;
 	app.locals.ENV_DEVELOPMENT = env == "development";
 
-	app.engine("handlebars", exphbs({
+	app.engine(".hbs", exphbs({
+		extname: ".hbs",
 		layoutsDir: config.root + "/app/views/layouts/",
 		defaultLayout: "main",
-		partialsDir: [config.root + "/app/views/partials/"]
+		partialsDir: [config.root + "/app/views/partials/"],
+		helpers: helpers
 	}));
 	app.set("views", config.root + "/app/views");
-	app.set("view engine", "handlebars");
+	app.set("view engine", ".hbs");
 
 	app.use(logger("dev"));
 	app.use(bodyParser.json());

@@ -24,7 +24,7 @@ module.exports = function(app) {
 
 router.get("/", function(req, res, next) {
 	res.render("index", {
-		title: config.name,
+		pagetitle: config.name,
 		description: config.description,
 		layout: "qubase",
 		qubaseExamples: qubaseExamples,
@@ -35,7 +35,7 @@ router.get("/", function(req, res, next) {
 
 router.get("/patterns", function(req, res, next) {
 	res.render("patterns", {
-		title: "Pattern Library",
+		pagetitle: "Pattern Library",
 		layout: "qubase",
 		patterns: patternContents
 	});
@@ -44,7 +44,7 @@ router.get("/patterns", function(req, res, next) {
 pages.forEach(function(page){
 	router.get("/"+page, function(req, res, next){
 		res.render("pages/" + page, {
-			title: page,
+			pagetitle: page,
 			layout: "main"
 		});
 	});
@@ -53,7 +53,7 @@ pages.forEach(function(page){
 qubaseExamples.forEach(function(page){
 	router.get("/qubase/"+page, function(req, res, next){
 		res.render("qubase/examples/" + page, {
-			title: page,
+			pagetitle: page,
 			layout: "qubase"
 		});
 	});
@@ -62,7 +62,7 @@ qubaseExamples.forEach(function(page){
 qubasePages.forEach(function(page){
 	router.get("/qubase/"+page, function(req, res, next){
 		res.render("qubase/" + page, {
-			title: page,
+			pagetitle: page,
 			layout: "qubase"
 		});
 	});

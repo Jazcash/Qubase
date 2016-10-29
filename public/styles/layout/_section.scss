@@ -19,12 +19,8 @@
     	}
     }
     &.wrapped{
-        padding-left: calc((100% - #{$site-wrapper-width})/2);
-        padding-right: calc((100% - #{$site-wrapper-width})/2);
-        @include below(($site-wrapper-width + ($spacer * 4))){
-        	padding-left: $spacer;
-        	padding-right: $spacer;
-        }
+    	max-width: ($site-wrapper-width + ($wrapper-padding-width * 2));
+    	padding: $wrapper-padding-width;
         margin: 0 auto;
     }
 }
