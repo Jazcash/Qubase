@@ -47,7 +47,6 @@ That's it! If you had no errors, you can now just run `gulp` to compile assets a
 	- [Nodemon](#nodemon)
 - [Handlebars](#handlebars)
 	- [Partials](#partials)
-- [Setting up automatic Beanstalk deployment](#setting-up-automatic-beanstalk-deployment)
 - [Graceful degradation or progressive enhancement](#graceful-degradation-or-progressive-enhancement)
 - [Responsive](#responsive)
 - [Style guide](#style-guide)
@@ -59,6 +58,7 @@ That's it! If you had no errors, you can now just run `gulp` to compile assets a
 	- [Fonts](#fonts)
 	- [Styles](#styles)
 	- [Scripts](#scripts)
+- [Setting up automatic Beanstalk deployment](#setting-up-automatic-beanstalk-deployment)
 - [Qubase Todo](#qubase-todo)
 
 ### Directory overview
@@ -112,20 +112,27 @@ Handlebars is a view engine, which means it compiles to HTML. Handlebars was cho
 [[back to contents](#table-of-contents)]  
 Partials are Handlebar's way of importing markup files. Partials should be treated as modular components, each partial with its own BEM class structure. You can import partials into your pages like this: `{{>card title="card-title"}}`. In the `card.hbs` file we can access the data passed through using `{{title}}` which will render the text `card-title` wherever we put the placeholder.
 
-### Setting up automatic Beanstalk deployment
-[[back to contents](#table-of-contents)]  
-
 ### Graceful degradation or progressive enhancement
 [[back to contents](#table-of-contents)]  
+Graceful degradation is the process of developing a site for modern browsers first, then implementing fallbacks for older browsers that don't support newer features. Progressive enhancement is developing a site that works on all browsers first, then implementing fancier stuff for newer browsers afterwards. The difference between these development strategies is that a graceful degradation route tends to mean a lower quality experience the older the browser is, whereas progressive enhancement might mean less immersive experiences for modern browsers. Pick a strategy that suits the site's purpose.
 
 ### Responsive
 [[back to contents](#table-of-contents)]  
+There are two strategies with responsive design: mobile-first or desktop-first. Whilst either of these approaches should result in the same output, they go about achieving it in different ways.
 
-### Style guide
-[[back to contents](#table-of-contents)]  
+A mobile-first process will write code with the goal of mobile in-mind. When testing your code in the browser, you test on a mobile first, then develop a media-query solution that targets larger viewports afterwards. This process means use the `above` mixin to target bigger devices.
+
+A desktop-first process means the opposite. Building with larger screens in mind, and testing on them first, then implementing the mobile view after. This strategy means using the `below` mixin to target smaller devices.
+
+Regardless of which you pick, it's a good idea to test on both mobile and desktop at the same time anyway. Browsersync can make testing on multiple devices at the same time easy.
 
 ### Pattern library
 [[back to contents](#table-of-contents)]  
+
+
+### Style guide
+[[back to contents](#table-of-contents)]  
+The style guide is a more design-oriented document that describes and demonstrates the themes of the site, including things like colour, spacing, colours, fonts and effects like drop-shadows or gradients.
 
 ### Rules and guidelines
 [[back to contents](#table-of-contents)]  
@@ -148,7 +155,11 @@ Partials are Handlebar's way of importing markup files. Partials should be treat
 #### Scripts
 [[back to contents](#table-of-contents)]  
 
+### Setting up automatic Beanstalk deployment
+[[back to contents](#table-of-contents)]  
+
 ## Qubase Todo
 [[back to contents](#table-of-contents)]  
 - Babel polyfill
 - Replace JSHint with ESLint
+- Move these todos into separate issues
