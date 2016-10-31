@@ -62,7 +62,7 @@ That's it! If you had no errors, you can now just run `gulp` to compile assets a
 - [Qubase Todo](#qubase-todo)
 
 ### Directory overview
-[[back to contents](#table-of-contents)]  
+
 The only directories you need to worry about for frontend projects are as follows:
 - **/app** - Server-side files
 	- **/views** - Markup files. `.hbs` are [handlebars](#handlebars) files
@@ -75,49 +75,49 @@ The only directories you need to worry about for frontend projects are as follow
 	- **/styles** - See [Styles](#styles)
 
 ### Gulpfile
-[[back to contents](#table-of-contents)]  
+
 Gulp is a task-runner that makes it easy to pipe your files through different sets of tooling. Tasks are written in JS and are intuitive to read and write. If you open `gulpfile.js` you'll see the `styles` and `scripts` tasks run the project's `.scss` and `.js` files through a pipeline of operations and spit out files into the `/build` folder at the end.
 
 You can type `gulp --tasks` to see an overview of all the tasks. Below are descriptions of the important tools used in Qubase's gulpfile.
 
 #### CSSNano and Autoprefixer
-[[back to contents](#table-of-contents)]  
+
 CSSNano is a CSS minifier that removes all white-space and unnecessary characters in order to shrink your stylesheet's filesize. It has another tool, called autoprefixer, built-in. Autoprefixer automatically reads your stylesheet and adds vendor-prefixes to relevant properties. This means you don't need to worry about adding all the different variations for things like flexbox and can instead just use the standard format, e.g. `display: flexbox`.
 
 #### Sourcemaps
-[[back to contents](#table-of-contents)]  
+
 Sourcemaps provide the data necessary to transform concatenated and minified files back into their original format. This is useful for developer inspection and debugging as the original files will be shown instead of having to sift through minified ones.
 
 #### JSHint
-[[back to contents](#table-of-contents)]  
+
 JSHint is a Javascript linting tool that analyses your JS and warns you of things like syntax errors or unused variables.
 
 #### Babel
-[[back to contents](#table-of-contents)]  
+
 Babel is a transpiler that allows you to write in newer versions of JS whilst retaining compatibility with older browsers that don't support the newer JS.
 
 #### Browsersync
-[[back to contents](#table-of-contents)]  
+
 Browsersync is a synchronised browser-testing tool that automatically refreshes your site's frontend whenever it detects client-side file changes. It also has some nifty functionality like synchronising browser sessions on multiple devices, including synced scrolling.
 
 #### Nodemon
-[[back to contents](#table-of-contents)]  
+
 Nodemon refreshes your site's backend whenever it detects server-side file changes.
 
 ### Handlebars
-[[back to contents](#table-of-contents)]  
+
 Handlebars is a view engine, which means it compiles to HTML. Handlebars was chosen for Qubase as it's purely HTML with the addition of Mustache-style placeholders. It makes it easy to render server-side data in your markup, as well as providing useful helpers to reduce the amount of custom Javascript you may otherwise have to write. For Qubase, Handlebars primary usage is for partials.
 
 #### Partials
-[[back to contents](#table-of-contents)]  
+
 Partials are Handlebar's way of importing markup files. Partials should be treated as modular components, each partial with its own BEM class structure. You can import partials into your pages like this: `{{>card title="card-title"}}`. In the `card.hbs` file we can access the data passed through using `{{title}}` which will render the text `card-title` wherever we put the placeholder.
 
 ### Graceful degradation or progressive enhancement
-[[back to contents](#table-of-contents)]  
+
 Graceful degradation is the process of developing a site for modern browsers first, then implementing fallbacks for older browsers that don't support newer features. Progressive enhancement is developing a site that works on all browsers first, then implementing fancier stuff for newer browsers afterwards. The difference between these development strategies is that a graceful degradation route tends to mean a lower quality experience the older the browser is, whereas progressive enhancement might mean less immersive experiences for modern browsers. Pick a strategy that suits the site's purpose.
 
 ### Responsive
-[[back to contents](#table-of-contents)]  
+
 There are two strategies with responsive design: mobile-first or desktop-first. Whilst either of these approaches should result in the same output, they go about achieving it in different ways.
 
 A mobile-first process will write code with the goal of mobile in-mind. When testing your code in the browser, you test on a mobile first, then develop a media-query solution that targets larger viewports afterwards. This process means use the `above` mixin to target bigger devices.
@@ -127,18 +127,18 @@ A desktop-first process means the opposite. Building with larger screens in mind
 Regardless of which you pick, it's a good idea to test on both mobile and desktop at the same time anyway. Browsersync can make testing on multiple devices at the same time easy.
 
 ### Pattern library - **WIP**
-[[back to contents](#table-of-contents)]  
+
 
 
 ### Style guide - **WIP**
-[[back to contents](#table-of-contents)]  
+
 The style guide is a more design-oriented document that describes and demonstrates the themes of the site, including things like colour, spacing, colours, fonts and effects like drop-shadows or gradients.
 
 ### Rules and guidelines - **WIP**
-[[back to contents](#table-of-contents)]  
+
 
 #### General - **WIP**
-[[back to contents](#table-of-contents)]  
+
 - Use double quotes `"` instead of single `'` quotes
 - Indentation should use 4 character wide tabs, not spaces
 - Keep everything lowercase where possible
@@ -147,7 +147,7 @@ The style guide is a more design-oriented document that describes and demonstrat
 - BEM nesting should only ever go one level deep. `block__element--modifier` is allowed.
 
 #### Markup - **WIP**
-[[back to contents](#table-of-contents)]  
+
 Markup should be:
 
 - Semantically correct
@@ -173,13 +173,13 @@ Markup should be:
 
 
 #### Images - **WIP**
-[[back to contents](#table-of-contents)]  
+
 
 #### Fonts - **WIP**
-[[back to contents](#table-of-contents)]  
+
 
 #### Styles - **WIP**
-[[back to contents](#table-of-contents)]  
+
 Stylesheets should be:
 
 - Clean, easily readable and modifiable
@@ -198,38 +198,34 @@ Stylesheets should be:
 - When creating component files, the named hierarchy of the component should be noted at the top of the file
 
 
-Never use floats. Ever.
-Avoid using !important as much as possible
-Z-indexes should be kept small. Try to stick to increments of 10
-br should be used to separate content, within the context of its container. i.e. content is still related, but should be visibly spaced. In general, you probably don't need to use these
-Don't use vendor prefixes, autoprefixer takes care of them
-Use hex instead of RGB
-To change the transparency of a colour, use rgba(#fff, 0.5)
-Try to avoid using colours directly and use variables instead
-Avoid animating layout properties like width, left, top and use transform instead
-In general, an element's position/layout should be defined by its parent (e.g. using padding)
-Order your scss in accordance with this CSScomb file:
-Consult caniuse.com if unsure about an element or css property's browser support
-Avoid passing specific values into breakpoints directly, use the breakpoint variable instead
-Where possible, try to build components to be reusable inside and outside of the project
-Avoid direct targetting of divs, spans, headings and try to use classes instead
-If some text should look like a heading, but it doesn't make semantic sense for it to be one, use the heading classes
-Avoid closing tags on single elements like input, meta, br, hr etc (see this list?)
-
-Stuff to research:
-Font awesome icon gulp thing?
-How to execute JS for only specific pages that need them
+- Never use floats. Ever.
+- Avoid using !important as much as possible
+- Z-indexes should be kept small. Try to stick to increments of 10
+- br should be used to separate content, within the context of its container. i.e. content is still related, but should be visibly spaced. In general, you probably don't need to use these
+- Don't use vendor prefixes, autoprefixer takes care of them
+- Use hex instead of RGB
+-To change the transparency of a colour, use rgba(#fff, 0.5)
+- Try to avoid using colours directly and use variables instead
+- Avoid animating layout properties like width, left, top and use transform instead
+- In general, an element's position/layout should be defined by its parent (e.g. using padding)
+- Order your scss in accordance with this CSScomb file:
+- Refer to caniuse.com if unsure about an element or css property's browser support
+- Avoid passing specific values into breakpoints directly, use the breakpoint variable instead
+- Where possible, try to build components to be reusable inside and outside of the project
+- Avoid direct targetting of divs, spans, headings and try to use classes instead
+- If some text should look like a heading, but it doesn't make semantic sense for it to be one, use the heading classes
+- Avoid closing tags on single elements like input, meta, br, hr etc (see this list?)
 
 #### Scripts - **WIP**
-[[back to contents](#table-of-contents)]  
+
 - Use CDNs for libraries where possible
 - Don't use raw github links
 
 ### Setting up automatic Beanstalk deployment - **WIP**
-[[back to contents](#table-of-contents)]  
+
 
 ## Qubase Todo - **WIP**
-[[back to contents](#table-of-contents)]  
+
 - Babel polyfill
 - Replace JSHint with ESLint
 - Move these todos into separate issues
