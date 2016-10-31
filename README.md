@@ -126,39 +126,109 @@ A desktop-first process means the opposite. Building with larger screens in mind
 
 Regardless of which you pick, it's a good idea to test on both mobile and desktop at the same time anyway. Browsersync can make testing on multiple devices at the same time easy.
 
-### Pattern library
+### Pattern library - **WIP**
 [[back to contents](#table-of-contents)]  
 
 
-### Style guide
+### Style guide - **WIP**
 [[back to contents](#table-of-contents)]  
 The style guide is a more design-oriented document that describes and demonstrates the themes of the site, including things like colour, spacing, colours, fonts and effects like drop-shadows or gradients.
 
-### Rules and guidelines
+### Rules and guidelines - **WIP**
 [[back to contents](#table-of-contents)]  
 
-#### General
+#### General - **WIP**
+[[back to contents](#table-of-contents)]  
+- Use double quotes `"` instead of single `'` quotes
+- Indentation should use 4 character wide tabs, not spaces
+- Keep everything lowercase where possible
+- Only use element ids for selecting elements in JS
+- Braces should stay on the same line as the opening selector, without a space inbetween `function hello(){`
+- BEM nesting should only ever go one level deep. `block__element--modifier` is allowed.
+
+#### Markup - **WIP**
+[[back to contents](#table-of-contents)]  
+Markup should be:
+
+- Semantically correct
+- SEO-friendly
+- Backend-neutral
+- Compatible with browsers as per the [browser matrix](matrix)
+
+### Code rules
+
+- Avoid putting block-level elements inside inline-level elements
+- Only use entity references for reserved HTML characters, characters like `£`, `%` can be used as-is
+- Try to avoid blank lines
+- Only keep elements on the same line if they are short, otherwise, indent on new line 
+- Classes should follow the [BEM](bem) pattern
+- Avoid putting CSS or Javascript directly in HTML files
+- For elements that require no closing tag, omit the closing slash `/>` and just use `>` alone
+- Use the correct [ARIA roles](http://karlgroves-sandbox.com/CheatSheets/ARIA-Cheatsheet.html) when applicable, don't use them unless certain of semantic correctness
+- Use the `title` attribute to convey additional/advisory information
+- Use the `alt` tag to offer a textual compromise if the image is missing
+- Try to avoid excessive use of `<br>`. Generally, you will not need to use them at all
+- Ensure the page makes chronological sense without CSS or JS
+- Where possible, add an image's exact dimensions to the element like `<img src="..." width="100px" height="100px">`. This forces the browser to reserve that space for the image, even if it hasn't loaded, reducing layout flickering
+
+
+#### Images - **WIP**
 [[back to contents](#table-of-contents)]  
 
-#### Markup
+#### Fonts - **WIP**
 [[back to contents](#table-of-contents)]  
 
-#### Images
+#### Styles - **WIP**
+[[back to contents](#table-of-contents)]  
+Stylesheets should be:
+
+- Clean, easily readable and modifiable
+- Modular, separated and organised
+- Compatible with browsers as per the [browser matrix](matrix)
+
+##Code rules
+
+- Responsive rules should use the `above` or `below` mixins. Stick to using only one per project for consistency
+- When IE is supported, be aware that flex uses attempted fallbacks and isn't guarenteed to work 100%.
+- Don't use vendor prefixes, autoprefixer takes care of them
+- Don't use floats
+- Avoid !important as much as possible
+- Try to keep control of your z-indexes and only use them if absolutely necessary. Never use anything like `9999`
+- To change the transparency of a colour, use rgba(#fff, 0.5)
+- When creating component files, the named hierarchy of the component should be noted at the top of the file
+
+
+Never use floats. Ever.
+Avoid using !important as much as possible
+Z-indexes should be kept small. Try to stick to increments of 10
+br should be used to separate content, within the context of its container. i.e. content is still related, but should be visibly spaced. In general, you probably don't need to use these
+Don't use vendor prefixes, autoprefixer takes care of them
+Use hex instead of RGB
+To change the transparency of a colour, use rgba(#fff, 0.5)
+Try to avoid using colours directly and use variables instead
+Avoid animating layout properties like width, left, top and use transform instead
+In general, an element's position/layout should be defined by its parent (e.g. using padding)
+Order your scss in accordance with this CSScomb file:
+Consult caniuse.com if unsure about an element or css property's browser support
+Avoid passing specific values into breakpoints directly, use the breakpoint variable instead
+Where possible, try to build components to be reusable inside and outside of the project
+Avoid direct targetting of divs, spans, headings and try to use classes instead
+If some text should look like a heading, but it doesn't make semantic sense for it to be one, use the heading classes
+Avoid closing tags on single elements like input, meta, br, hr etc (see this list?)
+
+Stuff to research:
+Font awesome icon gulp thing?
+How to execute JS for only specific pages that need them
+
+#### Scripts - **WIP**
+[[back to contents](#table-of-contents)]  
+- Use CDNs for libraries where possible
+- Don't use raw github links
+
+### Setting up automatic Beanstalk deployment - **WIP**
 [[back to contents](#table-of-contents)]  
 
-#### Fonts
-[[back to contents](#table-of-contents)]  
-
-#### Styles
-[[back to contents](#table-of-contents)]  
-
-#### Scripts
-[[back to contents](#table-of-contents)]  
-
-### Setting up automatic Beanstalk deployment
-[[back to contents](#table-of-contents)]  
-
-## Qubase Todo
+## Qubase Todo - **WIP**
 [[back to contents](#table-of-contents)]  
 - Babel polyfill
 - Replace JSHint with ESLint
