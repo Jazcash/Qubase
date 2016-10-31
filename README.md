@@ -129,7 +129,6 @@ Regardless of which you pick, it's a good idea to test on both mobile and deskto
 ### Pattern library - **WIP**
 
 
-
 ### Style guide - **WIP**
 
 The style guide is a more design-oriented document that describes and demonstrates the themes of the site, including things like colour, spacing, colours, fonts and effects like drop-shadows or gradients.
@@ -137,7 +136,7 @@ The style guide is a more design-oriented document that describes and demonstrat
 ### Rules and guidelines - **WIP**
 
 
-#### General - **WIP**
+#### General
 
 - Use double quotes `"` instead of single `'` quotes
 - Indentation should use 4 character wide tabs, not spaces
@@ -146,7 +145,7 @@ The style guide is a more design-oriented document that describes and demonstrat
 - Braces should stay on the same line as the opening selector, without a space inbetween `function hello(){`
 - BEM nesting should only ever go one level deep. `block__element--modifier` is allowed.
 
-#### Markup - **WIP**
+#### Markup
 
 Markup should be:
 
@@ -155,7 +154,7 @@ Markup should be:
 - Backend-neutral
 - Compatible with browsers as per the [browser matrix](matrix)
 
-### Code rules
+##### Code rules
 
 - Avoid putting block-level elements inside inline-level elements
 - Only use entity references for reserved HTML characters, characters like `£`, `%` can be used as-is
@@ -172,13 +171,13 @@ Markup should be:
 - Where possible, add an image's exact dimensions to the element like `<img src="..." width="100px" height="100px">`. This forces the browser to reserve that space for the image, even if it hasn't loaded, reducing layout flickering
 
 
-#### Images - **WIP**
+#### Images
 
 
-#### Fonts - **WIP**
+#### Fonts
 
 
-#### Styles - **WIP**
+#### Styles
 
 Stylesheets should be:
 
@@ -186,25 +185,14 @@ Stylesheets should be:
 - Modular, separated and organised
 - Compatible with browsers as per the [browser matrix](matrix)
 
-##Code rules
+##### Code rules
 
-- Responsive rules should use the `above` or `below` mixins. Stick to using only one per project for consistency
-- When IE is supported, be aware that flex uses attempted fallbacks and isn't guarenteed to work 100%.
-- Don't use vendor prefixes, autoprefixer takes care of them
-- Don't use floats
-- Avoid !important as much as possible
-- Try to keep control of your z-indexes and only use them if absolutely necessary. Never use anything like `9999`
-- To change the transparency of a colour, use rgba(#fff, 0.5)
 - When creating component files, the named hierarchy of the component should be noted at the top of the file
-
-
-- Never use floats. Ever.
 - Avoid using !important as much as possible
 - Z-indexes should be kept small. Try to stick to increments of 10
 - br should be used to separate content, within the context of its container. i.e. content is still related, but should be visibly spaced. In general, you probably don't need to use these
-- Don't use vendor prefixes, autoprefixer takes care of them
 - Use hex instead of RGB
--To change the transparency of a colour, use rgba(#fff, 0.5)
+- To change the transparency of a colour, use rgba(#fff, 0.5)
 - Try to avoid using colours directly and use variables instead
 - Avoid animating layout properties like width, left, top and use transform instead
 - In general, an element's position/layout should be defined by its parent (e.g. using padding)
@@ -216,7 +204,7 @@ Stylesheets should be:
 - If some text should look like a heading, but it doesn't make semantic sense for it to be one, use the heading classes
 - Avoid closing tags on single elements like input, meta, br, hr etc (see this list?)
 
-#### Scripts - **WIP**
+#### Scripts
 
 - Use CDNs for libraries where possible
 - Don't use raw github links
@@ -224,7 +212,7 @@ Stylesheets should be:
 ### Setting up automatic Beanstalk deployment - **WIP**
 
 
-## Qubase Todo - **WIP**
+## Qubase Todos
 
 - Babel polyfill
 - Replace JSHint with ESLint
