@@ -217,3 +217,7 @@ Stylesheets should be:
 - Babel polyfill
 - Replace JSHint with ESLint
 - Move these todos into separate issues
+- CSSComb file
+- CSS Lint? Probably not.
+- Using headings/paragraphs without margins
+- Maybe reset class?
