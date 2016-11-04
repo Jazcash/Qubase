@@ -223,4 +223,12 @@ Stylesheets should be:
 - CSSComb file
 - CSS Lint? Probably not.
 - Using headings/paragraphs without margins
-- Maybe reset class?
+- Maybe reset class? Only inside `<article>`? Just a way to have headings and p without margins
+- Different button styles (light, dark, block etc)
+- Colours docs 
+- Remove li requirement from cols, force ul in collist?
+- Make sure flex.js only runs for fallback browsers
+- Form example should show errors, invalid stuff, captcha?
+- Keep gulp running after SCSS errors
+- Unwrapped section instead of wrapped
+- Style guide standard layout (colours at the top, then typography etc)
