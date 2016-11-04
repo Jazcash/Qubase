@@ -1,27 +1,18 @@
 <div class="section wrapped padded-v-sm">
-	<h1>{{pagetitle}}</h1>
-	<p>{{description}}</p>
-
-	<h2>General</h2>
-	<h3>Guides</h3>
-	<ul>
-		{{#each qubasePages}}
-			<li><a href="/qubase/{{this}}">{{this}}</a></li>
-		{{/each}}
-	</ul>
-	<h3>Examples</h3>
+	<h1>Qubase</h1>
+	<h2>Examples</h2>
 	<ul>
 		{{#each qubaseExamples}}
 			<li><a href="/qubase/{{this}}">{{this}}</a></li>
 		{{/each}}
 	</ul>
 
-	<h2>Project</h4>
+	<h1>{{pagetitle}}</h1>
 	<ul>
-		<li><a href="">Style Guide</a></li>
-		<li><a href="">Pattern Library</a></li>
+		<li><a href="/style-guide">Style Guide</a></li>
+		<li><a href="/pattern-library">Pattern Library</a></li>
 	</ul>
-	<h3>Pages</h3>
+	<h2>Pages</h2>
 	<ul>
 		{{#each pages}}
 			<li><a href="{{this}}">{{this}}</a></li>

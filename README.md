@@ -33,7 +33,7 @@ Before creating a markup project, make sure you have the following documents or 
 
 That's it! If you had no errors, you can now just run `gulp` to compile assets and launch the server. If you do have problems feel free to open an [issue](https://github.com/Jazcash/Qubase/issues).
 
-## Docs (WIP)
+## Docs
 
 ### Table of contents
 
@@ -106,7 +106,7 @@ Nodemon refreshes your site's backend whenever it detects server-side file chang
 
 ### Handlebars
 
-Handlebars is a view engine, which means it compiles to HTML. Handlebars was chosen for Qubase as it's purely HTML with the addition of Mustache-style placeholders. It makes it easy to render server-side data in your markup, as well as providing useful helpers to reduce the amount of custom Javascript you may otherwise have to write. For Qubase, Handlebars primary usage is for partials.
+Handlebars is a view engine, which means it compiles to HTML. Handlebars was chosen for Qubase as it's purely HTML with the addition of Mustache-style placeholders. It makes it easy to render server-side data in your markup, as well as providing useful helpers to reduce the amount of custom Javascript you may otherwise have to write. For Qubase, Handlebars' primary usage is for partials.
 
 #### Partials
 
@@ -114,7 +114,7 @@ Partials are Handlebar's way of importing markup files. Partials should be treat
 
 ### Graceful degradation or progressive enhancement
 
-Graceful degradation is the process of developing a site for modern browsers first, then implementing fallbacks for older browsers that don't support newer features. Progressive enhancement is developing a site that works on all browsers first, then implementing fancier stuff for newer browsers afterwards. The difference between these development strategies is that a graceful degradation route tends to mean a lower quality experience the older the browser is, whereas progressive enhancement might mean less immersive experiences for modern browsers. Pick a strategy that suits the site's purpose.
+Graceful degradation is the process of developing a site for modern browsers first, then implementing fallbacks for older browsers that don't support newer features. Progressive enhancement is developing a site that works on all browsers first, then implementing fancier stuff for newer browsers afterwards. The difference between these development strategies is that a graceful degradation route tends to mean a lower quality experience the older the browser is, whereas progressive enhancement could mean a less immersive experiences for modern browsers. Pick a strategy that suits the site's purpose.
 
 ### Responsive
 
@@ -126,12 +126,15 @@ A desktop-first process means the opposite. Building with larger screens in mind
 
 Regardless of which you pick, it's a good idea to test on both mobile and desktop at the same time anyway. Browsersync can make testing on multiple devices at the same time easy.
 
-### Pattern library - **WIP**
-
-
 ### Style guide - **WIP**
 
-The style guide is a more design-oriented document that describes and demonstrates the themes of the site, including things like colour, spacing, colours, fonts and effects like drop-shadows or gradients.
+The style guide is a more design-oriented document that describes and demonstrates the themes of the site, including things like colour, spacing, colours, fonts and effects like drop-shadows or gradients. Not to be confused with the [style guidelines](#styles), which detail the technical, coding considerations.
+
+The style guide is a manually crafted document, found in `app/views/style-guide.hbs`
+
+### Pattern library - **WIP**
+
+The pattern library shows all the project's components on one page, along with their markup code. This makes it easy to see all the available components at a glance and gives a good overview of the project's progress. This page is generated automatically so you don't need to worry about it.
 
 ### Rules and guidelines - **WIP**
 

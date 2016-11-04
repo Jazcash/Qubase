@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require("fs");
 
 var qubasePages =  fs.readdirSync("./app/views/qubase").filter(function(x){ return x.split(".").length > 1 }).map(function(x){ return x.split(".")[0];});
-var qubaseExamples = fs.readdirSync("./app/views/qubase/examples").map(function(x){ return x.split(".")[0];});
+var qubaseExamples = fs.readdirSync("./app/views/qubase").map(function(x){ return x.split(".")[0];});
 
 var pages = fs.readdirSync("./app/views/pages/").map(function(x){ return x.split(".")[0];});
 
@@ -33,8 +33,12 @@ router.get("/", function(req, res, next) {
 	});
 });
 
-router.get("/patterns", function(req, res, next) {
-	res.render("patterns", {
+router.get("/style-guide", function(req, res, next) {
+	res.render("style-guide", {layout: "qubase"});
+});
+
+router.get("/pattern-library", function(req, res, next) {
+	res.render("pattern-library", {
 		pagetitle: "Pattern Library",
 		layout: "qubase",
 		patterns: patternContents
@@ -52,7 +56,7 @@ pages.forEach(function(page){
 
 qubaseExamples.forEach(function(page){
 	router.get("/qubase/"+page, function(req, res, next){
-		res.render("qubase/examples/" + page, {
+		res.render("qubase/" + page, {
 			pagetitle: page,
 			layout: "qubase"
 		});
