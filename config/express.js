@@ -14,13 +14,22 @@ module.exports = function(app, config) {
 	app.locals.ENV = env;
 	app.locals.ENV_DEVELOPMENT = env == "development";
 
-	app.engine(".hbs", exphbs({
+	var hbs = exphbs.create({
 		extname: ".hbs",
 		layoutsDir: config.root + "/app/views/layouts/",
 		defaultLayout: "main",
-		partialsDir: [config.root + "/app/views/partials/"],
-		helpers: helpers
-	}));
+		partialsDir: [config.root + "/app/views/partials/"]
+	});
+
+	helpers.include = function(args){
+		var thing = hbs.handlebars.compile(this.contents);
+		return thing();
+	}
+
+	hbs.helpers = helpers;
+
+	app.engine(".hbs", hbs.engine);
+
 	app.set("views", config.root + "/app/views");
 	app.set("view engine", ".hbs");
 
