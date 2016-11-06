@@ -128,7 +128,7 @@ Regardless of which you pick, it's a good idea to test on both mobile and deskto
 
 ### Style guide - **WIP**
 
-The style guide is a more design-oriented document that describes and demonstrates the themes of the site, including things like colour, spacing, colours, fonts and effects like drop-shadows or gradients. Not to be confused with the [style guidelines](#styles), which detail the technical, coding considerations.
+The style guide is a more design-oriented document that describes and demonstrates the themes of the site, including things like colour, spacing, colours, fonts and effects like drop-shadows or gradients.
 
 The style guide is a manually crafted document, found in `app/views/style-guide.hbs`
 
@@ -137,7 +137,6 @@ The style guide is a manually crafted document, found in `app/views/style-guide.
 The pattern library shows all the project's components on one page, along with their markup code. This makes it easy to see all the available components at a glance and gives a good overview of the project's progress. This page is generated automatically so you don't need to worry about it.
 
 ### Rules and guidelines - **WIP**
-
 
 #### General
 
@@ -180,7 +179,7 @@ Markup should be:
 #### Fonts
 
 
-#### Styles
+#### Stylesheets
 
 Stylesheets should be:
 
@@ -217,7 +216,6 @@ Stylesheets should be:
 
 ## Qubase Todos
 
-- Babel polyfill
 - Replace JSHint with ESLint
 - Move these todos into separate issues
 - CSSComb file
