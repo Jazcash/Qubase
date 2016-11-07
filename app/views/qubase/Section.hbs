@@ -1,32 +1,78 @@
-<div class="section wrapped padded-v-md">
+<section class="padded-v-md">
 	<h2>Section</h2>
 	<p>
-		The section class should be used for sections of content that should be visually separate from other content. Not to be confused with the <code>&lt;section&gt;</code> HTML5 element, which should be used to semantically separate content. However, the two can be used together if a piece of content should be both visually and semantically separated: <code>&lt;section class="section"&gt;</code>
-	</p>
-	<p>
-		The <code>wrapped</code> class can be added with the section class to enforce the container to be padded down to the <code>site-wrapper-width</code> as specified in <code>variables.scss</code>. Depending on the site being created, it might make more sense to add a single <code>&lt;div class="section wrapped&gt;</code> element around the <code>body</code> content in the main template. Otherwise, if you plan to allow for certain components to break out of the site-wrapper then you should wrap every other component width a wrapped section.
-	</p>
-	<p>
-		The <code>padded</code> class can also be added to a section, along with modifiers to control the size of the padding, and whether the padding should be top and bottom, or left and right. For example, <code>section wrapped padded-v-md</code> would wrap the section inside the site-wrapper, and apply medium padding to the top and bottom of the section.
-	</p>
-	<p>
-		It isn't currently possible for an element to be wrapped <b>and</b> be padded horizontally, although suppoort for this is planned for the future. For now, you'll need to create the padded section within a wrapped section.
+		The section element <code>&lt;section&gt;</code> or class <code>.section</code> should be used for sections of content that are contextually separate from other sections. 
 	</p>
 </div>
 
-<div class="section wrapped padded-v-md">
-	<div class="item">section wrapped padded-v-md</div>
-</div>
-<div class="section wrapped">
-	<div class="section padded-h-xl">
-		<div class="item">section wrapped -> section padded-h-xl</div>
-	</div>
-</div>
-<div class="section padded-xs">
+<div class="section">
+	<div class="item">section</div>
+</section>
+
+<section class="padded-v-xs">
+	<div class="item">section padded-v-xs</div>
+</section>
+
+<section class="padded-v-sm">
+	<div class="item">section padded-v-sm</div>
+</section>
+
+<section class="padded-v-md">
+	<div class="item">section padded-v-md</div>
+</section>
+
+<section class="padded-v-lg">
+	<div class="item">section padded-v-lg</div>
+</section>
+
+<section class="padded-v-xl">
+	<div class="item">section padded-v-xl</div>
+</section>
+
+<section class="padded-h-xs">
+	<div class="item">section padded-h-xs</div>
+</section>
+
+<section class="padded-h-sm">
+	<div class="item">section padded-h-sm</div>
+</section>
+
+<section class="padded-h-md">
+	<div class="item">section padded-h-md</div>
+</section>
+
+<section class="padded-h-lg">
+	<div class="item">section padded-h-lg</div>
+</section>
+
+<section class="padded-h-xl">
+	<div class="item">section padded-h-xl</div>
+</section>
+
+<section class="padded-xs">
 	<div class="item">section padded-xs</div>
-</div>
-<div class="section wrapped">
-	<div class="section padded-lg">
-		<div class="item">section wrapped -> section padded-lg</div>
-	</div>
-</div>
+</section>
+
+<section class="padded-sm">
+	<div class="item">section padded-sm</div>
+</section>
+
+<section class="padded-md">
+	<div class="item">section padded-md</div>
+</section>
+
+<section class="padded-lg">
+	<div class="item">section padded-lg</div>
+</section>
+
+<section class="padded-xl">
+	<div class="item">section padded-xl</div>
+</section>
+
+<section class="unwrapped">
+	<div class="item">section unwrapped</div>
+</section>
+
+<section class="unwrapped padded-md">
+	<div class="item">section unwrapped padded-md</div>
+</section>
