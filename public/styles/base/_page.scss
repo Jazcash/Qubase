@@ -2,11 +2,26 @@
 	box-sizing: border-box;
 }
 
+html{
+	//
+}
+
 body{
 	background-color: $body-background;
+	background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/pw_maze_white.png); // http://subtlepatterns.com/maze-white/
 	color: $mineshaft;
 	font-family: $primary-font;
 	-webkit-font-smoothing: antialiased; // standardise font appearance between OS'
 	-moz-osx-font-smoothing: grayscale;
 	overflow-y: scroll;
+	overflow-x: hidden; // hide horizontal scrollbar caused by .wrapped
+}
+
+.wrapped{
+	max-width: ($site-wrapper-width + ($wrapper-padding-width * 2));
+	margin: 0 auto;
+	@include below($site-wrapper-width + ($wrapper-padding-width * 4)){
+		padding-left: $wrapper-padding-width;
+		padding-right: $wrapper-padding-width;
+	}
 }

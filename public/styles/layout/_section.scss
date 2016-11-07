@@ -1,5 +1,11 @@
-.section{
+section, .section{
     position: relative;
+	&.unwrapped{
+		margin: 0 -100%; /* old browsers fallback */
+  		margin: 0 calc(50% - 50vw);
+		padding-left: $wrapper-padding-width;
+		padding-right: $wrapper-padding-width;
+	}
     &.padded{
     	$xs: $spacer/2;
     	$counter: 1;
@@ -17,10 +23,5 @@
     		}
     		$counter: $counter + 1;
     	}
-    }
-    &.wrapped{
-    	max-width: ($site-wrapper-width + ($wrapper-padding-width * 2));
-    	padding: $wrapper-padding-width;
-        margin: 0 auto;
     }
 }
