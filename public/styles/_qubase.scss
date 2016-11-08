@@ -1,13 +1,13 @@
 .item{
 	height: 100%;
-	padding: 10px;
+	padding: $spacer-sm;
 	color: #aaa;
 	border: 1px solid #aaa;
 	background: #fff;
 }
 
 .qubase-spacer{
-	margin: 0 25px;
+	margin: 0 $spacer-xl;
 }
 
 .pattern{
@@ -23,25 +23,60 @@ input[type=range][orient=vertical]{
 
 .layout-1{
 	max-width: 650px;
-	padding: 15px;
-	background: #ccc;
+	padding: $spacer;
+	background: #fff;
+	border: 1px solid #aaa;
 	&__col{
-		padding-top: 10px;
-		padding-bottom: 10px;
+		padding-top: $spacer-sm;
+		padding-bottom: $spacer-sm;
 		@include above(md){
 			&:first-child{
-				padding-right: 10px;
+				padding-right: $spacer-sm;
 			}
 			&:last-child{
-				padding-left: 10px;
+				padding-left: $spacer-sm;
 			}
 		}
 	}
 }
 
 .layout-2{
-	max-width: 650px;
-	& > div{
-		background: red;
+	font-size: 12px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	&__left-col{
+		width: 75%;
+	}
+	&__right-col{
+		width: 25%;
+		background: #fff;
+		border: 1px solid #aaa;
+		padding: $spacer;
+	}
+	&__top{
+		background: #fff;
+		border: 1px solid #aaa;
+		border-right: none;
+		position: relative;
+		padding: $spacer;
+		column-count: 3;
+		padding-right: 0;
+		&:after{
+			content: "";
+			position: absolute;
+			width: 1px;
+			height: 100%;
+			background: #fff;
+			right: -1px;
+			top: 0;
+			z-index: 1;
+		}
+	}
+	&__bottom{
+		background: #fff;
+		border: 1px solid #aaa;
+		height: 100%;
+		margin: $spacer $spacer 0 0;
+		padding: $spacer;
+		column-count: 4;
 	}
 }
