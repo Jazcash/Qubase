@@ -126,17 +126,17 @@ A desktop-first process means the opposite. Building with larger screens in mind
 
 Regardless of which you pick, it's a good idea to test on both mobile and desktop at the same time anyway. Browsersync can make testing on multiple devices at the same time easy.
 
-### Style guide - **WIP**
+### Style guide
 
 The style guide is a more design-oriented document that describes and demonstrates the themes of the site, including things like colour, spacing, colours, fonts and effects like drop-shadows or gradients.
 
 The style guide is a manually crafted document, found in `app/views/style-guide.hbs`
 
-### Pattern library - **WIP**
+### Pattern library
 
-The pattern library shows all the project's components on one page, along with their markup code. This makes it easy to see all the available components at a glance and gives a good overview of the project's progress. This page is generated automatically so you don't need to worry about it.
+The pattern library shows all the project's components on one page, along with their markup code. This makes it easy to see all the available components at a glance and gives a good overview of the project's progress. This page is generated automatically based on all the files in the partials directory.
 
-### Rules and guidelines - **WIP**
+### Rules and guidelines
 
 #### General
 
@@ -173,11 +173,9 @@ Markup should be:
 - Where possible, add an image's exact dimensions to the element like `<img src="..." width="100px" height="100px">`. This forces the browser to reserve that space for the image, even if it hasn't loaded, reducing layout flickering
 
 
-#### Images
-
-
 #### Fonts
 
+- Use web-hosted fonts as much as possible, e.g. https://fonts.google.com or https://typekit.com/
 
 #### Stylesheets
 
@@ -210,9 +208,6 @@ Stylesheets should be:
 
 - Use CDNs for libraries where possible
 - Don't use raw github links
-
-### Setting up automatic Beanstalk deployment - **WIP**
-
 
 ## Qubase Todos
 

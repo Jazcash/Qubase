@@ -26,9 +26,6 @@
 		&-shrink{
 			flex-shrink: 1;
 		}
-		&-basis{
-			flex-basis: 100%;
-		}
 		&-center-children-h{
 			justify-content: center;
 		}
@@ -54,6 +51,12 @@
 		}
 		&-space-between{
 			justify-content: space-between;
+		}
+		&-align-self-start{
+			align-self: flex-start;
+		}
+		&-align-self-end{
+			align-self: flex-end;
 		}
 	}
 }

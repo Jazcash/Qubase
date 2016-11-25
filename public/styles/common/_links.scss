@@ -1,24 +1,11 @@
 a{
 	color: $mariner;
-	&:link{
-		// unvisited link
-	}
-	&:visited{
-		// visited link
-	}
 	&:hover{
 		color: lighten($mariner, 10%);
 	}
-	&:active{
-		// selected link
-		color: darken($mariner, 10%);
-	}
-	&:focus{
-		// link with focus
-	}
 }
 
-// style a link to look like button, link-button
+// style a link to look like button, this is called a link-button
 .btn{
 	display: inline-block;
 	padding: 5px 10px;
@@ -27,14 +14,10 @@ a{
 	color: #fff;
 	border: none;
 	background: $mariner;
-	&:hover, &:focus{
+	&:hover{
 		cursor: pointer;
 		color: #222;
 		background: lighten($mariner, 5%);
-	}
-	&:active{
-		color: #000;
-		background: darken($mariner, 5%);
 	}
 	& > i{
 		margin-right: 7px;
