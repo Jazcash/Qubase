@@ -14,8 +14,11 @@ var browserSync = require('browser-sync').create();
 
 gulp.task("sass", function () {
 	return gulp.src(["./public/styles/styles.scss"])
+	.pipe(plumber({errorHandler: function (err) {
+        console.log(err);
+        this.emit('end');
+	}}))
 	.pipe(sourcemaps.init())
-	.pipe(plumber())
 	.pipe(sassGlob())
 	.pipe(sass())
 	.pipe(cssnano({
@@ -40,8 +43,11 @@ gulp.task("scripts", function(){
 		"./public/scripts/vendor/modernizr-custom.js",
 		"./public/scripts/vendor/flex.js"
 	])
+	.pipe(plumber({errorHandler: function (err) {
+        console.log(err);
+        this.emit('end');
+	}}))
 	.pipe(sourcemaps.init())
-	.pipe(plumber())
 	.pipe(jshint({
 		browser: true,
 		devel: true,
