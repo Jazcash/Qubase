@@ -8,9 +8,12 @@
 		cursor: pointer;
 		filter: grayscale(0);
 	}
+	@include below($site-wrapper-width + 200px){
+		display: none;
+	}
 }
 
-.item{
+.qubase-item{
 	height: 100%;
 	padding: $spacer-sm;
 	color: #aaa;
@@ -22,18 +25,13 @@
 	margin: 0 $spacer-xl;
 }
 
-.pattern{
+.qubase-pattern{
 	&__bar{
 		margin-bottom: $spacer;
 	}
 }
 
-input[type=range][orient=vertical]{
-	-webkit-appearance: slider-vertical;
-	writing-mode: bt-lr;
-}
-
-.layout-1{
+.qubase-layout-1{
 	max-width: 650px;
 	padding: $spacer;
 	background: #fff;
@@ -52,7 +50,7 @@ input[type=range][orient=vertical]{
 	}
 }
 
-.layout-2{
+.qubase-layout-2{
 	font-size: 12px;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	&__left-col{
