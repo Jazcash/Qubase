@@ -1,5 +1,5 @@
 {
-  "name": "Qubase",
+  "name": "qubase",
   "scripts": {
     "start": "node app.js"
   },

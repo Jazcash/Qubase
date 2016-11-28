@@ -14,11 +14,11 @@ var browserSync = require('browser-sync').create();
 
 gulp.task("sass", function () {
 	return gulp.src(["./public/styles/styles.scss"])
-	.pipe(plumber({errorHandler: function (err) {
-        console.log(err);
-        this.emit('end');
-	}}))
 	.pipe(sourcemaps.init())
+	.pipe(plumber({errorHandler: function (err) {
+		console.log(err);
+		this.emit('end');
+	}}))
 	.pipe(sassGlob())
 	.pipe(sass())
 	.pipe(cssnano({
@@ -39,15 +39,16 @@ gulp.task("sass", function () {
 gulp.task("scripts", function(){
 	return gulp.src([
 		"./public/scripts/util.js",
+		"./public/scripts/animation/**/*.js",
 		"./public/scripts/components/**/*.js",
 		"./public/scripts/vendor/modernizr-custom.js",
 		"./public/scripts/vendor/flex.js"
 	])
-	.pipe(plumber({errorHandler: function (err) {
-        console.log(err);
-        this.emit('end');
-	}}))
 	.pipe(sourcemaps.init())
+	.pipe(plumber({errorHandler: function (err) {
+		console.log(err);
+		this.emit('end');
+	}}))
 	.pipe(jshint({
 		browser: true,
 		devel: true,
@@ -72,16 +73,18 @@ gulp.task("watch", function() {
 });
 
 gulp.task("browser-sync", ["nodemon"], function() {
-    browserSync.init({
-        proxy: "http://localhost:3001",
-        port: 7000
-    });
+	browserSync.init({
+		proxy: "http://localhost:3001",
+		port: 7000
+	});
 });
 
 gulp.task("nodemon", function (cb) {
 	var started = false;
 	return nodemon({
-		script: "app.js"
+		script: "app.js",
+		ext: "js hbs",
+		ignore: ["public/"]
 	}).on('start', function () {
 		if (!started) {
 			cb();
