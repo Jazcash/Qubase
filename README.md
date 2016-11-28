@@ -200,7 +200,7 @@ Stylesheets should be:
 - Refer to caniuse.com if unsure about an element or css property's browser support
 - Avoid passing specific values into breakpoints directly, use the breakpoint variable instead
 - Where possible, try to build components to be reusable inside and outside of the project
-- Avoid direct targetting of divs, spans, headings and try to use classes instead
+- Try to avoid direct targetting of divs, spans, headings and try to use classes instead
 - If some text should look like a heading, but it doesn't make semantic sense for it to be one, use the heading classes
 - Avoid closing tags on single elements like input, meta, br, hr etc (see this list?)
 
