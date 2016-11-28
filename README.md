@@ -206,5 +206,4 @@ Stylesheets should be:
 
 #### Scripts
 
-- Use CDNs for libraries where possible
-- Don't use raw github links
+- Use CDNs for libraries where possible, try to use [cdnjs.com](cdnjs.com)
