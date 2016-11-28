@@ -189,7 +189,7 @@ Stylesheets should be:
 
 - When creating component files, the named hierarchy of the component should be noted at the top of the file
 - Avoid using !important as much as possible
-- Z-indexes should be kept small. Try to stick to increments of 10
+- z-indexes should be kept small. Try to stick to increments of 10
 - br should be used to separate content, within the context of its container. i.e. content is still related, but should be visibly spaced. In general, you probably don't need to use these
 - Use hex instead of RGB
 - To change the transparency of a colour, use rgba(#fff, 0.5)
