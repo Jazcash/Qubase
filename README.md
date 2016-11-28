@@ -197,7 +197,7 @@ Stylesheets should be:
 - Avoid animating layout properties like width, left, top and use transform instead
 - In general, an element's position/layout should be defined by its parent (e.g. using padding)
 - Order your scss in accordance with this CSScomb file:
-- Refer to caniuse.com if unsure about an element or css property's browser support
+- Refer to caniuse.com if unsure about an element's or css property's browser support
 - Avoid passing specific values into breakpoints directly, use the breakpoint variable instead
 - Where possible, try to build components to be reusable inside and outside of the project
 - Try to avoid direct targetting of divs, spans, headings and try to use classes instead
