@@ -10,7 +10,7 @@ var config = {
 
 	production: {
 		root: rootPath,
-		port: 3001,
+		port: 3025,
 	}
 };
 
