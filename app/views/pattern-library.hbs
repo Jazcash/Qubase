@@ -8,7 +8,7 @@
 				<button class="flex-right qubase-pattern__code-btn">View code <i class="fa fa-code" aria-hidden="true"></i></button>
     		</div>
 			<pre class="qubase-pattern__code" style="display: none;"><code class="language-markup">{{contents}}</code></pre>
-    		<div>{{{include this}}}</div>
+    		<div>{{> (lookup this 'filename') }}</div>
     	</section>
     {{/each}}
 </div>

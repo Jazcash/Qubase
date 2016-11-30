@@ -67,15 +67,16 @@ gulp.task("scripts", function(){
 });
 
 gulp.task("watch", function() {
-	gulp.watch("./public/styles/**/*.scss", ["sass"]);
-	gulp.watch("./public/scripts/**/*.js", ["scripts"]);
-	gulp.watch("./app/views/**/*").on("change", browserSync.reload);
+	gulp.watch("public/styles/**/*.scss", ["sass"]);
+	gulp.watch("public/scripts/**/*.js", ["scripts"]);
+	gulp.watch("app/views/**/*").on("change", browserSync.reload);
 });
 
 gulp.task("browser-sync", ["nodemon"], function() {
 	browserSync.init({
 		proxy: "http://localhost:3001",
-		port: 7000
+		port: 7000,
+		notify: false
 	});
 });
 
