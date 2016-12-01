@@ -25,3 +25,9 @@ body{
 		padding-right: $wrapper-padding-width;
 	}
 }
+
+.breakout{
+	max-width: 1080px + $wrapper-padding-width * 2;
+	margin-left: (-($wrapper-breakout-width/2));
+	margin-right: (-($wrapper-breakout-width/2));
+}

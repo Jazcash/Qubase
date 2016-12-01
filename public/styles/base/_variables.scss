@@ -2,6 +2,7 @@
 
 // general
 $site-wrapper-width: 960px; // 960, 1080, 1200 recommended
+$wrapper-breakout-width: 120px;
 $wrapper-padding-width: 10px;
 
 $spacer-xs: 5px;
@@ -24,6 +25,7 @@ $breakpoints: (
 // colours - http://chir.ag/projects/name-that-color
 $mariner:     #306BCF;
 $mineshaft:   #222222;
+$qubared:     #c1202b;
 
 $body-background: #eee;
 
