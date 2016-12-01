@@ -5,11 +5,11 @@ $site-wrapper-width: 960px; // 960, 1080, 1200 recommended
 $wrapper-breakout-width: 120px;
 $wrapper-padding-width: 10px;
 
-$spacer-xs: 5px;
+$spacer-xs:  5px;
 $spacer-sm:  10px;
-$spacer:    15px;
+$spacer:     15px;
 $spacer-lg:  20px;
-$spacer-xl: 25px;
+$spacer-xl:  25px;
 
 $gutter: $spacer;
 
@@ -22,10 +22,15 @@ $breakpoints: (
 	"xl": 1440px  // medium+ sized monitors
 );
 
-// colours - http://chir.ag/projects/name-that-color
-$mariner:     #306BCF;
-$mineshaft:   #222222;
-$qubared:     #c1202b;
+// colour names - http://www.color-blindness.com/color-name-hue/
+$colors: (
+	black: #000,
+	nero: #222,
+	white: #fff,
+	white-smoke: #eee,
+	mariner: #306BCF,
+	qubared: #c1202b
+);
 
 $body-background: #eee;
 

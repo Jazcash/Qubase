@@ -1,0 +1,12 @@
+@each $key, $val in $colors{
+	&.bg{ // background
+		&-#{$key}{
+			background: $val;
+		}
+	}
+	&.fg{ // foreground
+		&-#{$key}{
+			color: $val;
+		}
+	}
+}
