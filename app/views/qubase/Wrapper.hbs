@@ -4,18 +4,30 @@
 		Sometimes you want to build sites that contain wrapped and unwrapped elements. By default, <code>&lt;section&gt;</code> elements and elements with the <code>.section</code> class wrap their contents to have a <code>max-width</code> of <code>$site-wrapper-width</code>, defined in <code>_variables.scss</code>. Creating unwrapped elements that later contain wrapped elements is as simple as adding the <code>.wrapped</code> class to your section, then wrapping that element in an <code>.unwrapped</code> section element.
 	</p>
 </div>
+
 <div class="section unwrapped qubase-red">
 	<div class="section wrapped padded-md">
 		<p class="reset">This content sits inside a wrapped section, which sits inside an unwrapped section.</p>
 	</div>
 </div>
+
 <div class="section padded-md">
 	<p class="reset">There is also a <code>.breakout</code> class which you can apply to sections to get this:</p>
 </div>
+
 <div class="section breakout padded-md qubase-red">
 	<p class="reset">Breakout</p>
 </div>
 
 <div class="section padded-md">
-	<p class="reset">You can change how far the breakout should break using the <code>wrapper-breakout-width</code> variable.</p>
+	<p>You can change how far the breakout should break using the <code>$wrapper-breakout-width</code> variable.</p>
+	<p class="reset">You can mix and match classes to achieve other desired layouts.</p>
+</div>
+
+<div class="section unwrapped qubase-red">
+	<div class="section wrapped padded-md">
+		<div class="section breakout">
+			Breakout inside wrapped inside unwrapped
+		</div>
+	</div>
 </div>
