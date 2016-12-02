@@ -7,20 +7,20 @@
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	& > li{
+	& > *{
 		box-sizing: border-box;
 		vertical-align: top;
 	}
 }
 
-.no-flexbox .collist > li{
+.no-flexbox .collist > *{
 	display: inline-block;
 	margin-right: -4px;
 }
 
 .collist{
 	@for $n from 1 through 12{
-		&.row-#{$n} > li{
+		&.row-#{$n} > *{
 			width: calc((100% - (#{$gutter} * (#{$n} - 1))) / #{$n});
 			&:nth-child(#{$n}n + 1){
 				margin-left: 0;
@@ -36,7 +36,7 @@
 			}
 		}
 		@each $key, $val in $breakpoints{
-			&.#{$key}-row-#{$n} > li{
+			&.#{$key}-row-#{$n} > *{
 				@include above($val){
 					width: calc((100% - (#{$gutter} * (#{$n} - 1))) / #{$n});
 					&:nth-child(#{$n}n + 1){

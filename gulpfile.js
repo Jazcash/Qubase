@@ -38,11 +38,10 @@ gulp.task("sass", function () {
 
 gulp.task("scripts", function(){
 	return gulp.src([
+		"./public/scripts/vendor/**/*.js",
 		"./public/scripts/util.js",
 		"./public/scripts/animation/**/*.js",
-		"./public/scripts/components/**/*.js",
-		"./public/scripts/vendor/modernizr-custom.js",
-		"./public/scripts/vendor/flex.js"
+		"./public/scripts/components/**/*.js"
 	])
 	.pipe(sourcemaps.init())
 	.pipe(plumber({errorHandler: function (err) {

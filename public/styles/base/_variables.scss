@@ -21,15 +21,19 @@ $breakpoints: (
 );
 
 // colours
-// colour names - http://www.color-blindness.com/color-name-hue/
+// colour name ideas - http://chir.ag/projects/name-that-color/#6195ED
 $colors: (
 	black: #000,
 	nero: #222,
-	white-smoke: #eee,
+	white-smoke: #fafafa,
 	white: #fff,
 	mariner: #306BCF,
 	qubared: #c1202b,
-	qubared-light: #DD3340
+	qubared-light: #DD3340,
+	ebony: #1C1F28,
+	ebony-light: #313646,
+	pear: #BDC120,
+	pear-light: #DBDD32
 );
 
 $body-background: map-get($colors, white-smoke);
