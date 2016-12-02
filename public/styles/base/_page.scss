@@ -16,3 +16,8 @@ body{
 	overflow-y: scroll;
 	overflow-x: hidden; // hide horizontal scrollbar caused by .wrapped
 }
+
+main{
+	padding-top: $spacer;
+	padding-bottom: $spacer;
+}
