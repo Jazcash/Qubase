@@ -1,5 +1,3 @@
-// http://www.network-science.de/ascii/
-
 // general
 $site-wrapper-width: 960px; // 960, 1080, 1200 recommended
 $wrapper-breakout-width: 120px;
@@ -22,17 +20,21 @@ $breakpoints: (
 	"xl": 1440px  // medium+ sized monitors
 );
 
+// colours
 // colour names - http://www.color-blindness.com/color-name-hue/
 $colors: (
 	black: #000,
 	nero: #222,
-	white: #fff,
 	white-smoke: #eee,
+	white: #fff,
 	mariner: #306BCF,
-	qubared: #c1202b
+	qubared: #c1202b,
+	qubared-light: #DD3340
 );
 
-$body-background: #eee;
+$body-background: map-get($colors, white-smoke);
+$link-color: map-get($colors, qubared);
+$link-hover-color: map-get($colors, qubared-light);
 
 // fonts
 $primary-font: "Open Sans", sans-serif;

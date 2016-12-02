@@ -1,7 +1,7 @@
 a{
-	color: color(mariner);
+	color: $link-color;
 	&:hover{
-		color: lighten(color(mariner), 10%);
+		color: lighten($link-color, 10%);
 	}
 }
 
@@ -13,11 +13,11 @@ a{
 	text-decoration: none;
 	color: #fff;
 	border: none;
-	background: color(mariner);
+	background: $link-color;
 	&:hover{
 		cursor: pointer;
-		color: color(nero);
-		background: lighten(color(mariner), 5%);
+		color: #fff;
+		background: lighten($link-color, 5%);
 	}
 	& > i{
 		margin-right: 7px;
