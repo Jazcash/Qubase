@@ -16,18 +16,3 @@ body{
 	overflow-y: scroll;
 	overflow-x: hidden; // hide horizontal scrollbar caused by .wrapped
 }
-
-.wrapped{
-	max-width: ($site-wrapper-width + ($wrapper-padding-width * 2));
-	margin: 0 auto;
-	@include below($site-wrapper-width + ($wrapper-padding-width * 4)){
-		padding-left: $wrapper-padding-width;
-		padding-right: $wrapper-padding-width;
-	}
-}
-
-.breakout{
-	max-width: 1080px + $wrapper-padding-width * 2;
-	margin-left: (-($wrapper-breakout-width/2));
-	margin-right: (-($wrapper-breakout-width/2));
-}
