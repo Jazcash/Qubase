@@ -58,8 +58,6 @@ That's it! If you had no errors, you can now just run `gulp` to compile assets a
 	- [Fonts](#fonts)
 	- [Styles](#styles)
 	- [Scripts](#scripts)
-- [Setting up automatic Beanstalk deployment](#setting-up-automatic-beanstalk-deployment)
-- [Qubase Todo](#qubase-todo)
 
 ### Directory overview
 
