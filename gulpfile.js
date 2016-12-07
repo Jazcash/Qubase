@@ -10,14 +10,14 @@ var rename = require("gulp-rename");
 var sourcemaps = require("gulp-sourcemaps");
 var jshint = require("gulp-jshint");
 var babel = require("gulp-babel");
-var browserSync = require('browser-sync').create();
+var browserSync = require("browser-sync").create();
 
 gulp.task("sass", function () {
 	return gulp.src(["./public/styles/styles.scss"])
 	.pipe(sourcemaps.init())
 	.pipe(plumber({errorHandler: function (err) {
 		console.log(err);
-		this.emit('end');
+		this.emit("end");
 	}}))
 	.pipe(sassGlob())
 	.pipe(sass())
@@ -46,7 +46,7 @@ gulp.task("scripts", function(){
 	.pipe(sourcemaps.init())
 	.pipe(plumber({errorHandler: function (err) {
 		console.log(err);
-		this.emit('end');
+		this.emit("end");
 	}}))
 	.pipe(jshint({
 		browser: true,
@@ -85,7 +85,7 @@ gulp.task("nodemon", function (cb) {
 		script: "app.js",
 		ext: "js hbs",
 		ignore: ["public/"]
-	}).on('start', function () {
+	}).on("start", function () {
 		if (!started) {
 			cb();
 			started = true;
