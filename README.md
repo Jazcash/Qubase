@@ -25,7 +25,7 @@ Before creating a markup project, make sure you have the following documents or 
 ## Setup
 
 1. First, setup the main project repository if you haven't already. This should be the main repo for your project, backend and all. Create a folder in it under `branches/development/src/Solution_MyProject/` called `MyProject.Markup`
-2. Download the latest Qubase [release](https://github.com/Jazcash/Qubase/releases) and extract the contents directly into the markup folder you just created. There should be no extra folder here, e.g. `../MyProject.Markup/package.json`
+2. Download this repo(https://github.com/Jazcash/Qubase/archive/master.zip) and extract the contents directly into the markup folder you just created. There should be no extra folder here, e.g. `../MyProject.Markup/package.json`
 3. Open a cmd prompt in this directory
 4. Install [node.js](https://nodejs.org/en/) v4+ if you haven't already (type `node -v` in cmd to check version)
 5. Install gulp globally - `npm i -g gulp`
